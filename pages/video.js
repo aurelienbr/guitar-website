@@ -3,8 +3,9 @@ import Header from "../container/Header";
 import Layout from "../container/components/Layout";
 import fetch from "isomorphic-unfetch";
 import VideoMain from "../container/VideoMain";
+import { videos } from "../api";
 
-export default props => (
+const Video = props => (
   <div>
     <Header />
     <VideoMain />
@@ -25,3 +26,16 @@ export default props => (
     </style>
   </div>
 );
+
+Video.getInitialProps = async function(context) {
+  const { _id } = context.query;
+  const res = await videos.find({
+    query: {
+      _id
+    }
+  });
+
+  return { videos: res.data };
+};
+
+export default Video;

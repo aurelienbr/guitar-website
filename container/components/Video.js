@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 
 const Video = ({
+  id,
   width,
   height,
   title,
@@ -10,13 +11,12 @@ const Video = ({
   titleDescription,
   href
 }) => {
-  console.log(src);
   return (
     <div className="container">
       <iframe title={title} src={src} width={width} height={height}>
         <p>Your browser does not support iframes.</p>
       </iframe>
-      <Link href={href}>
+      <Link as={`/video/${id}`} href={href}>
         <div className="description-container">
           <p>{titleDescription}</p>
           <p>{description}</p>
@@ -44,6 +44,7 @@ const Video = ({
 };
 
 Video.propTypes = {
+  _id: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,

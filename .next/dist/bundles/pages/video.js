@@ -72,6 +72,29 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./api.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return videos; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers__ = __webpack_require__("@feathersjs/feathers");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client__ = __webpack_require__("@feathersjs/rest-client");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("axios");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+
+
+
+var app = __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers___default()();
+var restClient = __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client___default()("http://localhost:3030");
+app.configure(restClient.axios(__WEBPACK_IMPORTED_MODULE_2_axios___default.a));
+var videos = app.service("videos");
+
+/* unused harmony default export */ var _unused_webpack_default_export = (app);
+
+/***/ }),
+
 /***/ "./container/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -164,13 +187,15 @@ function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Video__ = __webpack_require__("./container/components/Video.js");
 var _jsxFileName = "C:\\React\\next-guitar-website\\container\\VideoMain.js";
+
 
 /* harmony default export */ __webpack_exports__["a"] = (function (props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1
+      lineNumber: 3
     }
   }, "VideoMain");
 });
@@ -319,52 +344,197 @@ var Layout = function Layout(props) {
 
 /***/ }),
 
+/***/ "./container/components/Video.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
+var _jsxFileName = "C:\\React\\next-guitar-website\\container\\components\\Video.js";
+
+
+
+
+
+var Video = function Video(_ref) {
+  var id = _ref.id,
+      width = _ref.width,
+      height = _ref.height,
+      title = _ref.title,
+      src = _ref.src,
+      description = _ref.description,
+      titleDescription = _ref.titleDescription,
+      href = _ref.href;
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]]) + " " + "container"
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("iframe", {
+    title: title,
+    src: src,
+    width: width,
+    height: height,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
+  }, "Your browser does not support iframes.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_link___default.a, {
+    as: "/video/".concat(id),
+    href: href,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    }
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]]) + " " + "description-container"
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
+  }, titleDescription), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
+  }, description))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+    styleId: "246397190",
+    css: ".container.__jsx-style-dynamic-selector{margin-top:10px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.description-container.__jsx-style-dynamic-selector{width:".concat(width, "px;max-width:").concat(width, "px;max-height:100px;word-wrap:break-word;}.description-container.__jsx-style-dynamic-selector:hover{cursor:pointer;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhaW5lclxcY29tcG9uZW50c1xcVmlkZW8uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0JrQixBQUcyQixBQU1xQixBQU10QixlQUNqQixDQVplLHFCQU00Qix5Q0FDeEIsWUFOSyxLQU9ELHFCQUN2QixvREFQcUIsNkZBQ3JCIiwiZmlsZSI6ImNvbnRhaW5lclxcY29tcG9uZW50c1xcVmlkZW8uanMiLCJzb3VyY2VSb290IjoiQzpcXFJlYWN0XFxuZXh0LWd1aXRhci13ZWJzaXRlIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFByb3BUeXBlcyBmcm9tIFwicHJvcC10eXBlc1wiO1xyXG5pbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcblxyXG5jb25zdCBWaWRlbyA9ICh7XHJcbiAgaWQsXHJcbiAgd2lkdGgsXHJcbiAgaGVpZ2h0LFxyXG4gIHRpdGxlLFxyXG4gIHNyYyxcclxuICBkZXNjcmlwdGlvbixcclxuICB0aXRsZURlc2NyaXB0aW9uLFxyXG4gIGhyZWZcclxufSkgPT4ge1xyXG4gIHJldHVybiAoXHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRhaW5lclwiPlxyXG4gICAgICA8aWZyYW1lIHRpdGxlPXt0aXRsZX0gc3JjPXtzcmN9IHdpZHRoPXt3aWR0aH0gaGVpZ2h0PXtoZWlnaHR9PlxyXG4gICAgICAgIDxwPllvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlmcmFtZXMuPC9wPlxyXG4gICAgICA8L2lmcmFtZT5cclxuICAgICAgPExpbmsgYXM9e2AvdmlkZW8vJHtpZH1gfSBocmVmPXtocmVmfT5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImRlc2NyaXB0aW9uLWNvbnRhaW5lclwiPlxyXG4gICAgICAgICAgPHA+e3RpdGxlRGVzY3JpcHRpb259PC9wPlxyXG4gICAgICAgICAgPHA+e2Rlc2NyaXB0aW9ufTwvcD5cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgPC9MaW5rPlxyXG4gICAgICA8c3R5bGUganN4PntgXHJcbiAgICAgICAgLmNvbnRhaW5lciB7XHJcbiAgICAgICAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIH1cclxuICAgICAgICAuZGVzY3JpcHRpb24tY29udGFpbmVyIHtcclxuICAgICAgICAgIHdpZHRoOiAke3dpZHRofXB4O1xyXG4gICAgICAgICAgbWF4LXdpZHRoOiAke3dpZHRofXB4O1xyXG4gICAgICAgICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAgICAgICB3b3JkLXdyYXA6IGJyZWFrLXdvcmQ7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5kZXNjcmlwdGlvbi1jb250YWluZXI6aG92ZXIge1xyXG4gICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIH1cclxuICAgICAgYH08L3N0eWxlPlxyXG4gICAgPC9kaXY+XHJcbiAgKTtcclxufTtcclxuXHJcblZpZGVvLnByb3BUeXBlcyA9IHtcclxuICBfaWQ6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcclxuICB3aWR0aDogUHJvcFR5cGVzLm51bWJlci5pc1JlcXVpcmVkLFxyXG4gIGhlaWdodDogUHJvcFR5cGVzLm51bWJlci5pc1JlcXVpcmVkLFxyXG4gIHRpdGxlOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXHJcbiAgc3JjOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXHJcbiAgZGVzY3JpcHRpb246IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcclxuICB0aXRsZURlc2NyaXB0aW9uOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXHJcbiAgaHJlZjogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkXHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBWaWRlbztcclxuIl19 */\n/*@ sourceURL=container\\components\\Video.js */"),
+    dynamic: [width, width]
+  }));
+};
+
+Video.propTypes = {
+  _id: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  width: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number.isRequired,
+  height: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number.isRequired,
+  title: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  src: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  description: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  titleDescription: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  href: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired
+};
+/* harmony default export */ __webpack_exports__["a"] = (Video);
+
+/***/ }),
+
 /***/ "./pages/video.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__container_Header__ = __webpack_require__("./container/Header.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__container_components_Layout__ = __webpack_require__("./container/components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_isomorphic_unfetch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__container_VideoMain__ = __webpack_require__("./container/VideoMain.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__container_Header__ = __webpack_require__("./container/Header.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__container_components_Layout__ = __webpack_require__("./container/components/Layout.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_isomorphic_unfetch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__container_VideoMain__ = __webpack_require__("./container/VideoMain.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__api__ = __webpack_require__("./api.js");
+
 var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\video.js";
 
 
 
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    className: "jsx-2193092007"
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__container_Header__["a" /* default */], {
+
+
+
+
+var Video = function Video(props) {
+  return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
-    }
-  }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__container_VideoMain__["a" /* default */], {
+    },
+    className: "jsx-2193092007"
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__container_Header__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     }
-  }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__container_VideoMain__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    }
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default.a, {
     styleId: "2193092007",
-    css: "@font-face{font-family:josephinSans;src:url(\"static/JosefinSans-Italic.ttf\");}body{font-family:\"josephinSans\",\"Lucida Sans Unicode\",\"Lucida Grande\", sans-serif;}a{-webkit-text-decoration:none;text-decoration:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFx2aWRlby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFXTyxBQUdvQyxBQUtiLEFBR1MseUJBUG9CLHlCQVEzQyxnQkFQQSxXQUlBIiwiZmlsZSI6InBhZ2VzXFx2aWRlby5qcyIsInNvdXJjZVJvb3QiOiJDOlxcUmVhY3RcXG5leHQtZ3VpdGFyLXdlYnNpdGUiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcbmltcG9ydCBIZWFkZXIgZnJvbSBcIi4uL2NvbnRhaW5lci9IZWFkZXJcIjtcclxuaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29udGFpbmVyL2NvbXBvbmVudHMvTGF5b3V0XCI7XHJcbmltcG9ydCBmZXRjaCBmcm9tIFwiaXNvbW9ycGhpYy11bmZldGNoXCI7XHJcbmltcG9ydCBWaWRlb01haW4gZnJvbSBcIi4uL2NvbnRhaW5lci9WaWRlb01haW5cIjtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IHByb3BzID0+IChcclxuICA8ZGl2PlxyXG4gICAgPEhlYWRlciAvPlxyXG4gICAgPFZpZGVvTWFpbiAvPlxyXG4gICAgPHN0eWxlIGpzeCBnbG9iYWw+XHJcbiAgICAgIHtgXHJcbiAgICAgICAgQGZvbnQtZmFjZSB7XHJcbiAgICAgICAgICBmb250LWZhbWlseTogam9zZXBoaW5TYW5zO1xyXG4gICAgICAgICAgc3JjOiB1cmwoXCJzdGF0aWMvSm9zZWZpblNhbnMtSXRhbGljLnR0ZlwiKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgYm9keSB7XHJcbiAgICAgICAgICBmb250LWZhbWlseTogXCJqb3NlcGhpblNhbnNcIiwgXCJMdWNpZGEgU2FucyBVbmljb2RlXCIsIFwiTHVjaWRhIEdyYW5kZVwiLFxyXG4gICAgICAgICAgICBzYW5zLXNlcmlmO1xyXG4gICAgICAgIH1cclxuICAgICAgICBhIHtcclxuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgICAgICB9XHJcbiAgICAgIGB9XHJcbiAgICA8L3N0eWxlPlxyXG4gIDwvZGl2PlxyXG4pO1xyXG4iXX0= */\n/*@ sourceURL=pages\\video.js */"
+    css: "@font-face{font-family:josephinSans;src:url(\"static/JosefinSans-Italic.ttf\");}body{font-family:\"josephinSans\",\"Lucida Sans Unicode\",\"Lucida Grande\", sans-serif;}a{-webkit-text-decoration:none;text-decoration:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFx2aWRlby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFZTyxBQUdvQyxBQUtiLEFBR1MseUJBUG9CLHlCQVEzQyxnQkFQQSxXQUlBIiwiZmlsZSI6InBhZ2VzXFx2aWRlby5qcyIsInNvdXJjZVJvb3QiOiJDOlxcUmVhY3RcXG5leHQtZ3VpdGFyLXdlYnNpdGUiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcbmltcG9ydCBIZWFkZXIgZnJvbSBcIi4uL2NvbnRhaW5lci9IZWFkZXJcIjtcclxuaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29udGFpbmVyL2NvbXBvbmVudHMvTGF5b3V0XCI7XHJcbmltcG9ydCBmZXRjaCBmcm9tIFwiaXNvbW9ycGhpYy11bmZldGNoXCI7XHJcbmltcG9ydCBWaWRlb01haW4gZnJvbSBcIi4uL2NvbnRhaW5lci9WaWRlb01haW5cIjtcclxuaW1wb3J0IHsgdmlkZW9zIH0gZnJvbSBcIi4uL2FwaVwiO1xyXG5cclxuY29uc3QgVmlkZW8gPSBwcm9wcyA9PiAoXHJcbiAgPGRpdj5cclxuICAgIDxIZWFkZXIgLz5cclxuICAgIDxWaWRlb01haW4gLz5cclxuICAgIDxzdHlsZSBqc3ggZ2xvYmFsPlxyXG4gICAgICB7YFxyXG4gICAgICAgIEBmb250LWZhY2Uge1xyXG4gICAgICAgICAgZm9udC1mYW1pbHk6IGpvc2VwaGluU2FucztcclxuICAgICAgICAgIHNyYzogdXJsKFwic3RhdGljL0pvc2VmaW5TYW5zLUl0YWxpYy50dGZcIik7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIGJvZHkge1xyXG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiam9zZXBoaW5TYW5zXCIsIFwiTHVjaWRhIFNhbnMgVW5pY29kZVwiLCBcIkx1Y2lkYSBHcmFuZGVcIixcclxuICAgICAgICAgICAgc2Fucy1zZXJpZjtcclxuICAgICAgICB9XHJcbiAgICAgICAgYSB7XHJcbiAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICAgICAgfVxyXG4gICAgICBgfVxyXG4gICAgPC9zdHlsZT5cclxuICA8L2Rpdj5cclxuKTtcclxuXHJcblZpZGVvLmdldEluaXRpYWxQcm9wcyA9IGFzeW5jIGZ1bmN0aW9uKGNvbnRleHQpIHtcclxuICBjb25zdCB7IF9pZCB9ID0gY29udGV4dC5xdWVyeTtcclxuICBjb25zdCByZXMgPSBhd2FpdCB2aWRlb3MuZmluZCh7XHJcbiAgICBxdWVyeToge1xyXG4gICAgICBfaWRcclxuICAgIH1cclxuICB9KTtcclxuXHJcbiAgcmV0dXJuIHsgdmlkZW9zOiByZXMuZGF0YSB9O1xyXG59O1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgVmlkZW87XHJcbiJdfQ== */\n/*@ sourceURL=pages\\video.js */"
   }));
-});
+};
+
+Video.getInitialProps =
+/*#__PURE__*/
+function () {
+  var _ref = _asyncToGenerator(
+  /*#__PURE__*/
+  __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(context) {
+    var _id, res;
+
+    return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _id = context.query._id;
+            _context.next = 3;
+            return __WEBPACK_IMPORTED_MODULE_8__api__["a" /* videos */].find({
+              query: {
+                _id: _id
+              }
+            });
+
+          case 3:
+            res = _context.sent;
+            return _context.abrupt("return", {
+              videos: res.data
+            });
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Video);
 
 /***/ }),
 
@@ -373,6 +543,34 @@ var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\video.js";
 
 module.exports = __webpack_require__("./pages/video.js");
 
+
+/***/ }),
+
+/***/ "@babel/runtime/regenerator":
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
+
+/***/ }),
+
+/***/ "@feathersjs/feathers":
+/***/ (function(module, exports) {
+
+module.exports = require("@feathersjs/feathers");
+
+/***/ }),
+
+/***/ "@feathersjs/rest-client":
+/***/ (function(module, exports) {
+
+module.exports = require("@feathersjs/rest-client");
+
+/***/ }),
+
+/***/ "axios":
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

@@ -15,9 +15,10 @@ class Videos extends React.Component {
           {videos.map(video => (
             <Video
               key={video._id}
+              id={video._id}
               height={400}
               width={600}
-              href="/video"
+              href={`/video?id=${video._id}`}
               author={video.author}
               title={video.title}
               src={video.video}
@@ -54,7 +55,6 @@ class Videos extends React.Component {
 
 Videos.getInitialProps = async function(context) {
   const res = await videos.find();
-
   return { videos: res.data };
 };
 
