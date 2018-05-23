@@ -2,18 +2,16 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 class Button extends React.Component {
-  state = {
-    active: false
-  };
-
   render() {
     const { children, href, selected } = this.props;
 
     return (
       <div className="container">
         <Link href={href}>
-          <a onClick={() => this.setState({ active: !this.state.active })}>
-            <p className={selected && "selected-button"}>{children}</p>
+          <a>
+            <p className={selected ? "selected-button" : "button"}>
+              {children}
+            </p>
           </a>
         </Link>
         <style jsx>
@@ -28,6 +26,9 @@ class Button extends React.Component {
             p {
               font-size: 26px;
               color: #9a4c8e;
+            }
+            .button:hover {
+              border-bottom: 1px solid #e056fd;
             }
             a {
               height: 80px;
