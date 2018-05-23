@@ -2431,7 +2431,7 @@ var _default = function _default(props) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/video.js");
@@ -2439,7 +2439,7 @@ module.exports = __webpack_require__("./pages/video.js");
 
 /***/ })
 
-},[6])
+},[4])
           return { page: comp.default }
         })
       ;
