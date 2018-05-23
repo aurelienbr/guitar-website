@@ -7,13 +7,13 @@ class Button extends React.Component {
   };
 
   render() {
-    const { children, href } = this.props;
+    const { children, href, selected } = this.props;
 
     return (
       <div className="container">
         <Link href={href}>
           <a onClick={() => this.setState({ active: !this.state.active })}>
-            <p>{children}</p>
+            <p className={selected && "selected-button"}>{children}</p>
           </a>
         </Link>
         <style jsx>
@@ -21,6 +21,9 @@ class Button extends React.Component {
             .container {
               margin-left: 10px;
               margin-right: 10px;
+            }
+            .selected-button {
+              border-bottom: 2px solid #9a4c8e;
             }
             p {
               font-size: 26px;
@@ -39,7 +42,8 @@ class Button extends React.Component {
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired
+  href: PropTypes.string.isRequired,
+  selected: PropTypes.boolean
 };
 
 export default Button;

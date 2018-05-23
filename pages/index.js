@@ -1,16 +1,18 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
+
 import Header from "../container/Header";
 import Layout from "../container/components/Layout";
 import Video from "../container/components/Video";
-import fetch from "isomorphic-unfetch";
+
 import { videos } from "../api";
 
 class Videos extends React.Component {
   render() {
-    const { videos } = this.props;
+    const { videos, pathname } = this.props;
     return (
       <div>
-        <Header />
+        <Header pathname={pathname} />
         <main className="video-container">
           {videos.map(video => (
             <Video
@@ -49,7 +51,12 @@ class Videos extends React.Component {
 
 Videos.getInitialProps = async function(context) {
   const res = await videos.find();
-  return { videos: res.data };
+  return { videos: res.data, pathname: context.pathname };
+};
+
+Videos.propTypes = {
+  videos: PropTypes.array.isRequired,
+  pathname: PropTypes.string.isRequired
 };
 
 export default Videos;

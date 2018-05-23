@@ -1,13 +1,14 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
+
 import Header from "../container/Header";
 import Layout from "../container/components/Layout";
-import fetch from "isomorphic-unfetch";
-import Tabs from "../container/Tabs";
+import TabsComponent from "../container/Tabs";
 
-export default props => (
+const Tabs = props => (
   <div>
-    <Header />
-    <Tabs />
+    <Header pathname={props.pathname} />
+    <TabsComponent />
     <style jsx global>
       {`
         body {
@@ -20,3 +21,13 @@ export default props => (
     </style>
   </div>
 );
+
+Tabs.getInitialProps = async function(context) {
+  return { pathname: context.pathname };
+};
+
+Tabs.propTypes = {
+  pathname: PropTypes.string.isRequired
+};
+
+export default Tabs;

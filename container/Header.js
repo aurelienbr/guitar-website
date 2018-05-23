@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Button from "./components/Button";
 
 const BUTTONS = [
@@ -19,12 +19,18 @@ const BUTTONS = [
   }
 ];
 
-class Header extends Component {
+class Header extends React.Component {
   render() {
+    const { pathname } = this.props;
     return (
       <header className="header">
         {BUTTONS.map(button => (
-          <Button key={button.id} href={button.href} route={button.href}>
+          <Button
+            selected={button.href === pathname}
+            key={button.id}
+            href={button.href}
+            route={button.href}
+          >
             {button.text}
           </Button>
         ))}
@@ -41,5 +47,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  pathname: PropTypes.string.isRequired
+};
 
 export default Header;

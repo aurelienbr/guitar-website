@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Header from "../container/Header";
 import Layout from "../container/components/Layout";
-import fetch from "isomorphic-unfetch";
-import Contact from "../container/Contact";
+import ContactComponent from "../container/Contact";
 
-export default props => (
+import PropTypes from "prop-types";
+
+const Contact = props => (
   <div>
-    <Header />
-    <Contact />
+    <Header pathname={props.pathname} />
+    <ContactComponent />
     <style jsx global>
       {`
         body {
@@ -20,3 +21,13 @@ export default props => (
     </style>
   </div>
 );
+
+Contact.getInitialProps = async function(context) {
+  return { pathname: context.pathname };
+};
+
+Contact.propTypes = {
+  pathname: PropTypes.string.isRequired
+};
+
+export default Contact;

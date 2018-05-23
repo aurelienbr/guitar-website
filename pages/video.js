@@ -1,15 +1,15 @@
 import Link from "next/link";
 import Header from "../container/Header";
 import Layout from "../container/components/Layout";
-import fetch from "isomorphic-unfetch";
+import PropTypes from "prop-types";
+
 import VideoMain from "../container/VideoMain";
-import axios from "axios";
 import { videos } from "../api";
 
-const Video = ({ video }) => {
+const Video = ({ video, pathname }) => {
   return (
     <div>
-      <Header />
+      <Header pathname={pathname} />
       <VideoMain
         author={video.author}
         height={400}
@@ -18,6 +18,7 @@ const Video = ({ video }) => {
         src={video.video}
         title={video.title}
         description={video.description}
+        tab="http://hjg.com.ar/ghibli/musica/mononoke/"
       />
       <style jsx global>
         {`
@@ -36,7 +37,12 @@ const Video = ({ video }) => {
 Video.getInitialProps = async function(context) {
   const { id } = context.query;
   const res = await videos.find({ query: { _id: id } });
-  return { video: res.data[0] };
+  return { video: res.data[0], pathname: context.pathname };
+};
+
+Video.propTypes = {
+  pathname: PropTypes.string.isRequired,
+  video: PropTypes.object.isRequired
 };
 
 export default Video;
