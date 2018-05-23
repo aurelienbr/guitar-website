@@ -3,39 +3,40 @@ import Header from "../container/Header";
 import Layout from "../container/components/Layout";
 import fetch from "isomorphic-unfetch";
 import VideoMain from "../container/VideoMain";
+import axios from "axios";
 import { videos } from "../api";
 
-const Video = props => (
-  <div>
-    <Header />
-    <VideoMain />
-    <style jsx global>
-      {`
-        @font-face {
-          font-family: josephinSans;
-          src: url("static/JosefinSans-Italic.ttf");
-        }
-        body {
-          font-family: "josephinSans", "Lucida Sans Unicode", "Lucida Grande",
-            sans-serif;
-        }
-        a {
-          text-decoration: none;
-        }
-      `}
-    </style>
-  </div>
-);
+const Video = ({ video }) => {
+  return (
+    <div>
+      <Header />
+      <VideoMain
+        author={video.author}
+        height={400}
+        width={700}
+        title={video.title}
+        src={video.video}
+        title={video.title}
+        description={video.description}
+      />
+      <style jsx global>
+        {`
+          body {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+          }
+          a {
+            text-decoration: none;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
 
 Video.getInitialProps = async function(context) {
-  const { _id } = context.query;
-  const res = await videos.find({
-    query: {
-      _id
-    }
-  });
-
-  return { videos: res.data };
+  const { id } = context.query;
+  const res = await videos.find({ query: { _id: id } });
+  return { video: res.data[0] };
 };
 
 export default Video;

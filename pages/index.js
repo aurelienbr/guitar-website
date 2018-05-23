@@ -22,20 +22,14 @@ class Videos extends React.Component {
               author={video.author}
               title={video.title}
               src={video.video}
-              titleDescription="Hayao Miyazaki"
               description={video.description}
             />
           ))}
         </main>
         <style jsx global>
           {`
-            @font-face {
-              font-family: josephinSans;
-              src: url("static/JosefinSans-Italic.ttf");
-            }
             body {
-              font-family: "josephinSans", "Lucida Sans Unicode",
-                "Lucida Grande", sans-serif;
+              font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
             }
             a {
               text-decoration: none;

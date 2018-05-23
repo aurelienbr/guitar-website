@@ -10,16 +10,11 @@ export default props => (
     <Contact />
     <style jsx global>
       {`
-        @font-face {
-          font-family: josephinSans;
-          src: url("static/JosefinSans-Italic.ttf");
-        }
         body {
-          font-family: "josephinSans", "Lucida Sans Unicode", "Lucida Grande",
-            sans-serif;
+          font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
         }
         a {
-          text-decoration: none
+          text-decoration: none;
         }
       `}
     </style>

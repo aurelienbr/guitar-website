@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -185,20 +185,80 @@ function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Video__ = __webpack_require__("./container/components/Video.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 var _jsxFileName = "C:\\React\\next-guitar-website\\container\\VideoMain.js";
 
 
-/* harmony default export */ __webpack_exports__["a"] = (function (props) {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+
+
+var VideoMain = function VideoMain(_ref) {
+  var width = _ref.width,
+      height = _ref.height,
+      title = _ref.title,
+      src = _ref.src,
+      description = _ref.description,
+      author = _ref.author;
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
-    }
-  }, "VideoMain");
-});
+      lineNumber: 5
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2505518021", [width, width]]]) + " " + "container"
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2505518021", [width, width]]]) + " " + "description-container title-container"
+  }, title), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("iframe", {
+    title: title,
+    src: src,
+    width: width,
+    height: height,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2505518021", [width, width]]])
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2505518021", [width, width]]])
+  }, "Your browser does not support iframes.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2505518021", [width, width]]]) + " " + "description-container"
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2505518021", [width, width]]])
+  }, description)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+    styleId: "2505518021",
+    css: ".container.__jsx-style-dynamic-selector{padding:20px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.title-container.__jsx-style-dynamic-selector{text-align:center;}.description-container.__jsx-style-dynamic-selector{width:".concat(width, "px;max-width:").concat(width, "px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhaW5lclxcVmlkZW9NYWluLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVlrQixBQUd3QixBQU1LLEFBR21CLGFBUnhCLEtBTWYsbUJBRzJDLHlDQUMzQyxTQVR3Qiw4RUFDSCw2RkFDckIiLCJmaWxlIjoiY29udGFpbmVyXFxWaWRlb01haW4uanMiLCJzb3VyY2VSb290IjoiQzpcXFJlYWN0XFxuZXh0LWd1aXRhci13ZWJzaXRlIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFByb3BUeXBlcyBmcm9tIFwicHJvcC10eXBlc1wiO1xyXG5cclxuY29uc3QgVmlkZW9NYWluID0gKHsgd2lkdGgsIGhlaWdodCwgdGl0bGUsIHNyYywgZGVzY3JpcHRpb24sIGF1dGhvciB9KSA9PiB7XHJcbiAgcmV0dXJuIChcclxuICAgIDxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyXCI+XHJcbiAgICAgIDxoMSBjbGFzc05hbWU9XCJkZXNjcmlwdGlvbi1jb250YWluZXIgdGl0bGUtY29udGFpbmVyXCI+e3RpdGxlfTwvaDE+XHJcbiAgICAgIDxpZnJhbWUgdGl0bGU9e3RpdGxlfSBzcmM9e3NyY30gd2lkdGg9e3dpZHRofSBoZWlnaHQ9e2hlaWdodH0+XHJcbiAgICAgICAgPHA+WW91ciBicm93c2VyIGRvZXMgbm90IHN1cHBvcnQgaWZyYW1lcy48L3A+XHJcbiAgICAgIDwvaWZyYW1lPlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImRlc2NyaXB0aW9uLWNvbnRhaW5lclwiPlxyXG4gICAgICAgIDxwPntkZXNjcmlwdGlvbn08L3A+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8c3R5bGUganN4PntgXHJcbiAgICAgICAgLmNvbnRhaW5lciB7XHJcbiAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIH1cclxuICAgICAgICAudGl0bGUtY29udGFpbmVyIHtcclxuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICB9XHJcbiAgICAgICAgLmRlc2NyaXB0aW9uLWNvbnRhaW5lciB7XHJcbiAgICAgICAgICB3aWR0aDogJHt3aWR0aH1weDtcclxuICAgICAgICAgIG1heC13aWR0aDogJHt3aWR0aH1weDtcclxuICAgICAgICB9XHJcbiAgICAgIGB9PC9zdHlsZT5cclxuICAgIDwvZGl2PlxyXG4gICk7XHJcbn07XHJcblxyXG5WaWRlb01haW4ucHJvcFR5cGVzID0ge1xyXG4gIGF1dGhvcjogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxyXG4gIHdpZHRoOiBQcm9wVHlwZXMubnVtYmVyLmlzUmVxdWlyZWQsXHJcbiAgaGVpZ2h0OiBQcm9wVHlwZXMubnVtYmVyLmlzUmVxdWlyZWQsXHJcbiAgdGl0bGU6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcclxuICBzcmM6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcclxuICBkZXNjcmlwdGlvbjogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkXHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBWaWRlb01haW47XHJcbiJdfQ== */\n/*@ sourceURL=container\\VideoMain.js */"),
+    dynamic: [width, width]
+  }));
+};
+
+VideoMain.propTypes = {
+  author: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  width: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number.isRequired,
+  height: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number.isRequired,
+  title: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  src: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  description: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired
+};
+/* harmony default export */ __webpack_exports__["a"] = (VideoMain);
 
 /***/ }),
 
@@ -344,101 +404,6 @@ var Layout = function Layout(props) {
 
 /***/ }),
 
-/***/ "./container/components/Video.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
-var _jsxFileName = "C:\\React\\next-guitar-website\\container\\components\\Video.js";
-
-
-
-
-
-var Video = function Video(_ref) {
-  var id = _ref.id,
-      width = _ref.width,
-      height = _ref.height,
-      title = _ref.title,
-      src = _ref.src,
-      description = _ref.description,
-      titleDescription = _ref.titleDescription,
-      href = _ref.href;
-  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]]) + " " + "container"
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("iframe", {
-    title: title,
-    src: src,
-    width: width,
-    height: height,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
-  }, "Your browser does not support iframes.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_link___default.a, {
-    as: "/video/".concat(id),
-    href: href,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    }
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]]) + " " + "description-container"
-  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
-  }, titleDescription), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["246397190", [width, width]]])
-  }, description))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
-    styleId: "246397190",
-    css: ".container.__jsx-style-dynamic-selector{margin-top:10px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.description-container.__jsx-style-dynamic-selector{width:".concat(width, "px;max-width:").concat(width, "px;max-height:100px;word-wrap:break-word;}.description-container.__jsx-style-dynamic-selector:hover{cursor:pointer;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhaW5lclxcY29tcG9uZW50c1xcVmlkZW8uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0JrQixBQUcyQixBQU1xQixBQU10QixlQUNqQixDQVplLHFCQU00Qix5Q0FDeEIsWUFOSyxLQU9ELHFCQUN2QixvREFQcUIsNkZBQ3JCIiwiZmlsZSI6ImNvbnRhaW5lclxcY29tcG9uZW50c1xcVmlkZW8uanMiLCJzb3VyY2VSb290IjoiQzpcXFJlYWN0XFxuZXh0LWd1aXRhci13ZWJzaXRlIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFByb3BUeXBlcyBmcm9tIFwicHJvcC10eXBlc1wiO1xyXG5pbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcblxyXG5jb25zdCBWaWRlbyA9ICh7XHJcbiAgaWQsXHJcbiAgd2lkdGgsXHJcbiAgaGVpZ2h0LFxyXG4gIHRpdGxlLFxyXG4gIHNyYyxcclxuICBkZXNjcmlwdGlvbixcclxuICB0aXRsZURlc2NyaXB0aW9uLFxyXG4gIGhyZWZcclxufSkgPT4ge1xyXG4gIHJldHVybiAoXHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRhaW5lclwiPlxyXG4gICAgICA8aWZyYW1lIHRpdGxlPXt0aXRsZX0gc3JjPXtzcmN9IHdpZHRoPXt3aWR0aH0gaGVpZ2h0PXtoZWlnaHR9PlxyXG4gICAgICAgIDxwPllvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlmcmFtZXMuPC9wPlxyXG4gICAgICA8L2lmcmFtZT5cclxuICAgICAgPExpbmsgYXM9e2AvdmlkZW8vJHtpZH1gfSBocmVmPXtocmVmfT5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImRlc2NyaXB0aW9uLWNvbnRhaW5lclwiPlxyXG4gICAgICAgICAgPHA+e3RpdGxlRGVzY3JpcHRpb259PC9wPlxyXG4gICAgICAgICAgPHA+e2Rlc2NyaXB0aW9ufTwvcD5cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgPC9MaW5rPlxyXG4gICAgICA8c3R5bGUganN4PntgXHJcbiAgICAgICAgLmNvbnRhaW5lciB7XHJcbiAgICAgICAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIH1cclxuICAgICAgICAuZGVzY3JpcHRpb24tY29udGFpbmVyIHtcclxuICAgICAgICAgIHdpZHRoOiAke3dpZHRofXB4O1xyXG4gICAgICAgICAgbWF4LXdpZHRoOiAke3dpZHRofXB4O1xyXG4gICAgICAgICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICAgICAgICB3b3JkLXdyYXA6IGJyZWFrLXdvcmQ7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5kZXNjcmlwdGlvbi1jb250YWluZXI6aG92ZXIge1xyXG4gICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIH1cclxuICAgICAgYH08L3N0eWxlPlxyXG4gICAgPC9kaXY+XHJcbiAgKTtcclxufTtcclxuXHJcblZpZGVvLnByb3BUeXBlcyA9IHtcclxuICBfaWQ6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcclxuICB3aWR0aDogUHJvcFR5cGVzLm51bWJlci5pc1JlcXVpcmVkLFxyXG4gIGhlaWdodDogUHJvcFR5cGVzLm51bWJlci5pc1JlcXVpcmVkLFxyXG4gIHRpdGxlOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXHJcbiAgc3JjOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXHJcbiAgZGVzY3JpcHRpb246IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcclxuICB0aXRsZURlc2NyaXB0aW9uOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXHJcbiAgaHJlZjogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkXHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBWaWRlbztcclxuIl19 */\n/*@ sourceURL=container\\components\\Video.js */"),
-    dynamic: [width, width]
-  }));
-};
-
-Video.propTypes = {
-  _id: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
-  width: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number.isRequired,
-  height: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number.isRequired,
-  title: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
-  src: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
-  description: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
-  titleDescription: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
-  href: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired
-};
-/* harmony default export */ __webpack_exports__["a"] = (Video);
-
-/***/ }),
-
 /***/ "./pages/video.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -457,7 +422,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_isomorphic_unfetch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__container_VideoMain__ = __webpack_require__("./container/VideoMain.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__api__ = __webpack_require__("./api.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_axios__ = __webpack_require__("axios");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__api__ = __webpack_require__("./api.js");
 
 var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\video.js";
 
@@ -465,6 +432,7 @@ var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\video.js";
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -472,53 +440,61 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var Video = function Video(props) {
+
+
+var Video = function Video(_ref) {
+  var _React$createElement;
+
+  var video = _ref.video;
   return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 11
     },
-    className: "jsx-2193092007"
+    className: "jsx-3973917943"
   }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__container_Header__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     }
-  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__container_VideoMain__["a" /* default */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    }
-  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default.a, {
-    styleId: "2193092007",
-    css: "@font-face{font-family:josephinSans;src:url(\"static/JosefinSans-Italic.ttf\");}body{font-family:\"josephinSans\",\"Lucida Sans Unicode\",\"Lucida Grande\", sans-serif;}a{-webkit-text-decoration:none;text-decoration:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFx2aWRlby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFZTyxBQUdvQyxBQUtiLEFBR1MseUJBUG9CLHlCQVEzQyxnQkFQQSxXQUlBIiwiZmlsZSI6InBhZ2VzXFx2aWRlby5qcyIsInNvdXJjZVJvb3QiOiJDOlxcUmVhY3RcXG5leHQtZ3VpdGFyLXdlYnNpdGUiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcbmltcG9ydCBIZWFkZXIgZnJvbSBcIi4uL2NvbnRhaW5lci9IZWFkZXJcIjtcclxuaW1wb3J0IExheW91dCBmcm9tIFwiLi4vY29udGFpbmVyL2NvbXBvbmVudHMvTGF5b3V0XCI7XHJcbmltcG9ydCBmZXRjaCBmcm9tIFwiaXNvbW9ycGhpYy11bmZldGNoXCI7XHJcbmltcG9ydCBWaWRlb01haW4gZnJvbSBcIi4uL2NvbnRhaW5lci9WaWRlb01haW5cIjtcclxuaW1wb3J0IHsgdmlkZW9zIH0gZnJvbSBcIi4uL2FwaVwiO1xyXG5cclxuY29uc3QgVmlkZW8gPSBwcm9wcyA9PiAoXHJcbiAgPGRpdj5cclxuICAgIDxIZWFkZXIgLz5cclxuICAgIDxWaWRlb01haW4gLz5cclxuICAgIDxzdHlsZSBqc3ggZ2xvYmFsPlxyXG4gICAgICB7YFxyXG4gICAgICAgIEBmb250LWZhY2Uge1xyXG4gICAgICAgICAgZm9udC1mYW1pbHk6IGpvc2VwaGluU2FucztcclxuICAgICAgICAgIHNyYzogdXJsKFwic3RhdGljL0pvc2VmaW5TYW5zLUl0YWxpYy50dGZcIik7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIGJvZHkge1xyXG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiam9zZXBoaW5TYW5zXCIsIFwiTHVjaWRhIFNhbnMgVW5pY29kZVwiLCBcIkx1Y2lkYSBHcmFuZGVcIixcclxuICAgICAgICAgICAgc2Fucy1zZXJpZjtcclxuICAgICAgICB9XHJcbiAgICAgICAgYSB7XHJcbiAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICAgICAgfVxyXG4gICAgICBgfVxyXG4gICAgPC9zdHlsZT5cclxuICA8L2Rpdj5cclxuKTtcclxuXHJcblZpZGVvLmdldEluaXRpYWxQcm9wcyA9IGFzeW5jIGZ1bmN0aW9uKGNvbnRleHQpIHtcclxuICBjb25zdCB7IF9pZCB9ID0gY29udGV4dC5xdWVyeTtcclxuICBjb25zdCByZXMgPSBhd2FpdCB2aWRlb3MuZmluZCh7XHJcbiAgICBxdWVyeToge1xyXG4gICAgICBfaWRcclxuICAgIH1cclxuICB9KTtcclxuXHJcbiAgcmV0dXJuIHsgdmlkZW9zOiByZXMuZGF0YSB9O1xyXG59O1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgVmlkZW87XHJcbiJdfQ== */\n/*@ sourceURL=pages\\video.js */"
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__container_VideoMain__["a" /* default */], (_React$createElement = {
+    author: video.author,
+    height: 400,
+    width: 700,
+    title: video.title,
+    src: video.video
+  }, _defineProperty(_React$createElement, "title", video.title), _defineProperty(_React$createElement, "description", video.description), _defineProperty(_React$createElement, "__source", {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  }), _React$createElement)), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default.a, {
+    styleId: "3973917943",
+    css: "body{font-family:\"Lucida Sans Unicode\",\"Lucida Grande\",sans-serif;}a{-webkit-text-decoration:none;text-decoration:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFx2aWRlby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQlMsQUFHNEUsQUFHMUMsa0RBQ3ZCLFdBSEEiLCJmaWxlIjoicGFnZXNcXHZpZGVvLmpzIiwic291cmNlUm9vdCI6IkM6XFxSZWFjdFxcbmV4dC1ndWl0YXItd2Vic2l0ZSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcclxuaW1wb3J0IEhlYWRlciBmcm9tIFwiLi4vY29udGFpbmVyL0hlYWRlclwiO1xyXG5pbXBvcnQgTGF5b3V0IGZyb20gXCIuLi9jb250YWluZXIvY29tcG9uZW50cy9MYXlvdXRcIjtcclxuaW1wb3J0IGZldGNoIGZyb20gXCJpc29tb3JwaGljLXVuZmV0Y2hcIjtcclxuaW1wb3J0IFZpZGVvTWFpbiBmcm9tIFwiLi4vY29udGFpbmVyL1ZpZGVvTWFpblwiO1xyXG5pbXBvcnQgYXhpb3MgZnJvbSBcImF4aW9zXCI7XHJcbmltcG9ydCB7IHZpZGVvcyB9IGZyb20gXCIuLi9hcGlcIjtcclxuXHJcbmNvbnN0IFZpZGVvID0gKHsgdmlkZW8gfSkgPT4ge1xyXG4gIHJldHVybiAoXHJcbiAgICA8ZGl2PlxyXG4gICAgICA8SGVhZGVyIC8+XHJcbiAgICAgIDxWaWRlb01haW5cclxuICAgICAgICBhdXRob3I9e3ZpZGVvLmF1dGhvcn1cclxuICAgICAgICBoZWlnaHQ9ezQwMH1cclxuICAgICAgICB3aWR0aD17NzAwfVxyXG4gICAgICAgIHRpdGxlPXt2aWRlby50aXRsZX1cclxuICAgICAgICBzcmM9e3ZpZGVvLnZpZGVvfVxyXG4gICAgICAgIHRpdGxlPXt2aWRlby50aXRsZX1cclxuICAgICAgICBkZXNjcmlwdGlvbj17dmlkZW8uZGVzY3JpcHRpb259XHJcbiAgICAgIC8+XHJcbiAgICAgIDxzdHlsZSBqc3ggZ2xvYmFsPlxyXG4gICAgICAgIHtgXHJcbiAgICAgICAgICBib2R5IHtcclxuICAgICAgICAgICAgZm9udC1mYW1pbHk6IFwiTHVjaWRhIFNhbnMgVW5pY29kZVwiLCBcIkx1Y2lkYSBHcmFuZGVcIiwgc2Fucy1zZXJpZjtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgIGEge1xyXG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgYH1cclxuICAgICAgPC9zdHlsZT5cclxuICAgIDwvZGl2PlxyXG4gICk7XHJcbn07XHJcblxyXG5WaWRlby5nZXRJbml0aWFsUHJvcHMgPSBhc3luYyBmdW5jdGlvbihjb250ZXh0KSB7XHJcbiAgY29uc3QgeyBpZCB9ID0gY29udGV4dC5xdWVyeTtcclxuICBjb25zdCByZXMgPSBhd2FpdCB2aWRlb3MuZmluZCh7IHF1ZXJ5OiB7IF9pZDogaWQgfSB9KTtcclxuICByZXR1cm4geyB2aWRlbzogcmVzLmRhdGFbMF0gfTtcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IFZpZGVvO1xyXG4iXX0= */\n/*@ sourceURL=pages\\video.js */"
   }));
 };
 
 Video.getInitialProps =
 /*#__PURE__*/
 function () {
-  var _ref = _asyncToGenerator(
+  var _ref2 = _asyncToGenerator(
   /*#__PURE__*/
   __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(context) {
-    var _id, res;
-
+    var id, res;
     return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _id = context.query._id;
+            id = context.query.id;
             _context.next = 3;
-            return __WEBPACK_IMPORTED_MODULE_8__api__["a" /* videos */].find({
+            return __WEBPACK_IMPORTED_MODULE_9__api__["a" /* videos */].find({
               query: {
-                _id: _id
+                _id: id
               }
             });
 
           case 3:
             res = _context.sent;
             return _context.abrupt("return", {
-              videos: res.data
+              video: res.data[0]
             });
 
           case 5:
@@ -530,7 +506,7 @@ function () {
   }));
 
   return function (_x) {
-    return _ref.apply(this, arguments);
+    return _ref2.apply(this, arguments);
   };
 }();
 
@@ -538,7 +514,7 @@ function () {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/video.js");

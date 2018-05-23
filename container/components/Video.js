@@ -8,34 +8,29 @@ const Video = ({
   title,
   src,
   description,
-  titleDescription,
-  href
+  href,
+  author
 }) => {
   return (
     <div className="container">
+      <Link as={`/video/${id}`} href={href}>
+        <h1 className="title">{title}</h1>
+      </Link>
       <iframe title={title} src={src} width={width} height={height}>
         <p>Your browser does not support iframes.</p>
       </iframe>
-      <Link as={`/video/${id}`} href={href}>
-        <div className="description-container">
-          <p>{titleDescription}</p>
-          <p>{description}</p>
-        </div>
-      </Link>
       <style jsx>{`
         .container {
           margin-top: 10px;
           display: flex;
           flex-direction: column;
           align-items: center;
+          padding-bottom: 10px;
         }
-        .description-container {
-          width: ${width}px;
-          max-width: ${width}px;
-          max-height: 100px;
-          word-wrap: break-word;
+        .title {
+          text-align: center;
         }
-        .description-container:hover {
+        .title:hover {
           cursor: pointer;
         }
       `}</style>
@@ -44,13 +39,13 @@ const Video = ({
 };
 
 Video.propTypes = {
-  _id: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  titleDescription: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired
 };
 
