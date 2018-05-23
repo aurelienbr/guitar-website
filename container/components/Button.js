@@ -10,7 +10,7 @@ class Button extends Component {
     const { children, href, defaultMessage } = this.props;
 
     return (
-      <div>
+      <div className="container">
         <Link href={href}>
           <a
             onClick={() => this.setState({ active: !this.state.active })}
@@ -19,6 +19,14 @@ class Button extends Component {
             <p>{children}</p>
           </a>
         </Link>
+        <style jsx>
+          {`
+            p {
+              font-size: 26px;
+              color: #9a4c8e;
+            }
+          `}
+        </style>
       </div>
     );
   }

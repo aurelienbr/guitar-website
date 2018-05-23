@@ -33,6 +33,7 @@ class Header extends Component {
             .header {
               display: flex;
               justify-content: flex-end;
+              border-bottom: 1px solid #e056fd;
             }
           `}
         </style>
