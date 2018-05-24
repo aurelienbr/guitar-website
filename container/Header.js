@@ -24,22 +24,29 @@ class Header extends React.Component {
     const { pathname } = this.props;
     return (
       <header className="header">
-        {BUTTONS.map(button => (
-          <Button
-            selected={button.href === pathname}
-            key={button.id}
-            href={button.href}
-            route={button.href}
-          >
-            {button.text}
-          </Button>
-        ))}
+        <h1>Aurélien à la guitare</h1>
+        <div className="container-button">
+          {BUTTONS.map(button => (
+            <Button
+              selected={button.href === pathname}
+              key={button.id}
+              href={button.href}
+              route={button.href}
+            >
+              {button.text}
+            </Button>
+          ))}
+        </div>
+
         <style jsx>
           {`
             .header {
               display: flex;
-              justify-content: flex-end;
+              justify-content: space-around;
               border-bottom: 1px solid #e056fd;
+            }
+            .container-button {
+              display: flex;
             }
           `}
         </style>
