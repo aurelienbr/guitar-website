@@ -1,20 +1,70 @@
+import axios from "axios";
+import verifForm from "../tools/verifForm";
+import Loader from "react-loader-spinner";
+
+const API_MAIL = "https://apiresume.herokuapp.com/mail";
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "",
       email: "",
-      textarea: ""
+      textarea: "",
+      loading: false,
+      error: {
+        name: "",
+        email: "",
+        textarea: ""
+      }
     };
   }
 
-  handleName = e => this.setState({ name: e.target.value });
-  handleEmail = e => this.setState({ email: e.target.value });
-  handleTextArea = e => this.setState({ textarea: e.target.value });
-  render() {
+  sendEmail = event => {
     const { name, email, textarea } = this.state;
+    event.preventDefault();
+    this.setState({ loading: true });
+    const error = verifForm(name, email, textarea);
+    if (Object.keys(error).length > 0) {
+      this.setState({
+        error,
+        loading: false
+      });
+      return false;
+    }
+    axios
+      .post(API_MAIL, {
+        email: email,
+        subject: "Email from guitar-website",
+        text: `${name} wants to tell you that... ${textarea}`,
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded"
+        }
+      })
+      .then(response => {
+        this.setState({ loading: false });
+      });
+  };
+
+  handleName = e =>
+    this.setState({
+      name: e.target.value,
+      error: { ...this.state.error, name: "" }
+    });
+  handleEmail = e =>
+    this.setState({
+      email: e.target.value,
+      error: { ...this.state.error, email: "" }
+    });
+  handleTextArea = e =>
+    this.setState({
+      textarea: e.target.value,
+      error: { ...this.state.error, textarea: "" }
+    });
+  render() {
+    const { name, email, textarea, loading, error } = this.state;
     return (
-      <form id="form" class="topBefore">
+      <form id="form">
         <div id="container">
           <h1>&bull; Keep in Touch &bull;</h1>
           <div class="underline" />
@@ -25,32 +75,37 @@ class Contact extends React.Component {
                 type="text"
                 placeholder="My name is"
                 value={name}
-								onChange={this.handleName}
-                id="name_input"
-                required
+                onChange={this.handleName}
               />
+              <p className="error">{error.name}</p>
             </div>
             <div class="email">
               <input
                 type="email"
                 placeholder="My e-mail is"
                 value={email}
-								onChange={this.handleEmail}
-                id="email_input"
-                required
+                onChange={this.handleEmail}
               />
+              <p className="error">{error.email}</p>
             </div>
             <div class="message">
               <textarea
                 value={textarea}
-								onChange={this.handleTextArea}
+                onChange={this.handleTextArea}
                 placeholder="My message"
-                id="message_input"
-                required
               />
+              <p className="error">{error.textarea}</p>
             </div>
-            <div class="submit">
-              <input type="submit" id="form_button" />
+            <div>
+              {loading ? (
+                <div id="form_button" className="loader-container">
+                  <Loader type="Rings" color="black" height="50" width="50" />
+                </div>
+              ) : (
+                <button onClick={this.sendEmail} id="form_button">
+                  SEND
+                </button>
+              )}
             </div>
           </form>
         </div>
@@ -74,6 +129,9 @@ class Contact extends React.Component {
           button,
           select {
             text-transform: none;
+          }
+          .error {
+            color: red;
           }
 
           button,
@@ -102,7 +160,6 @@ class Contact extends React.Component {
 
           form {
             padding: 37.5px;
-            margin: 50px 0;
           }
 
           h1 {
@@ -202,8 +259,12 @@ class Contact extends React.Component {
             font-family: "Helvetica", Arial, sans-serif;
             font-size: 0.875em;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             outline: none;
-            padding: 20px 35px;
+            height: 60px;
+            width: 175px;
             text-transform: uppercase;
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
