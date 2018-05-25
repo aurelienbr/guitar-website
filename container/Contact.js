@@ -11,11 +11,13 @@ class Contact extends React.Component {
       name: "",
       email: "",
       textarea: "",
+      success: "",
       loading: false,
       error: {
         name: "",
         email: "",
-        textarea: ""
+        textarea: "",
+        global: ""
       }
     };
   }
@@ -42,7 +44,24 @@ class Contact extends React.Component {
         }
       })
       .then(response => {
-        this.setState({ loading: false });
+        this.setState({
+          loading: false,
+          success: "Your e-mail has been successfully sent",
+          error: { name: "", email: "", textarea: "", global: "" }
+        });
+        setTimeout(() => {
+          this.setState({ success: "", success: "" });
+        });
+      })
+      .catch(err => {
+        const global =
+          err.message === "Network Error"
+            ? "Your message could not be sent please check your internet connection"
+            : "Error while sending your message";
+        this.setState({
+          error: { ...this.state.error, global },
+          loading: false
+        });
       });
   };
 
@@ -62,15 +81,15 @@ class Contact extends React.Component {
       error: { ...this.state.error, textarea: "" }
     });
   render() {
-    const { name, email, textarea, loading, error } = this.state;
+    const { name, email, textarea, loading, error, success } = this.state;
     return (
       <form id="form">
         <div id="container">
           <h1>&bull; Keep in Touch &bull;</h1>
-          <div class="underline" />
+          <div className="underline" />
 
           <form id="contact_form">
-            <div class="name">
+            <div>
               <input
                 type="text"
                 placeholder="My name is"
@@ -79,7 +98,7 @@ class Contact extends React.Component {
               />
               <p className="error">{error.name}</p>
             </div>
-            <div class="email">
+            <div>
               <input
                 type="email"
                 placeholder="My e-mail is"
@@ -88,7 +107,7 @@ class Contact extends React.Component {
               />
               <p className="error">{error.email}</p>
             </div>
-            <div class="message">
+            <div>
               <textarea
                 value={textarea}
                 onChange={this.handleTextArea}
@@ -107,6 +126,8 @@ class Contact extends React.Component {
                 </button>
               )}
             </div>
+            <p className="success">{success}</p>
+            <p className="error">{error.global}</p>
           </form>
         </div>
         <style jsx>{`
@@ -124,6 +145,10 @@ class Contact extends React.Component {
 
           button {
             overflow: visible;
+          }
+
+          .success {
+            color: green;
           }
 
           button,
@@ -214,15 +239,6 @@ class Contact extends React.Component {
           textarea:focus {
             outline: none;
             padding: 0 0 0.875em 0;
-          }
-
-          .message {
-            float: none;
-          }
-
-          .name {
-            float: left;
-            width: 45%;
           }
 
           textarea {
