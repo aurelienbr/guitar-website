@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Header from "../container/Header";
-import Layout from "../container/components/Layout";
 import PropTypes from "prop-types";
 
 import VideoMain from "../container/VideoMain";

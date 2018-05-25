@@ -1,8 +1,8 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
+import Head from "next/head";
 
 import Header from "../container/Header";
-import Layout from "../container/components/Layout";
 import Video from "../container/components/Video";
 
 import { videos } from "../api";
@@ -12,6 +12,14 @@ class Videos extends React.Component {
     const { videos, pathname } = this.props;
     return (
       <div>
+        <Head>
+          <title>This page has a title 🤔</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
         <Header pathname={pathname} />
         <main className="video-container">
           {videos.map(video => (
