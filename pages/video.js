@@ -4,6 +4,7 @@ import Layout from "../container/components/Layout";
 import PropTypes from "prop-types";
 
 import VideoMain from "../container/VideoMain";
+import Footer from "../container/components/Footer";
 import { videos } from "../api";
 
 const Video = ({ video, pathname }) => {
@@ -20,6 +21,7 @@ const Video = ({ video, pathname }) => {
         description={video.description}
         tab="http://hjg.com.ar/ghibli/musica/mononoke/"
       />
+      <Footer />
       <style jsx global>
         {`
           body {
