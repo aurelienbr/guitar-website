@@ -1,11 +1,17 @@
+// @flow
+import React from "react";
 import Link from "next/link";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import Header from "../container/Header";
 import TabsComponent from "../container/Tab";
 
-const Tabs = ({ pathname, tabs }) => (
+type Props = {
+  pathname: string,
+  tabs: Array<any>
+};
+
+const Tabs = ({ pathname, tabs }: Props) => (
   <div>
     <Header pathname={pathname} />
     {tabs.map(tab => (
@@ -26,10 +32,6 @@ const Tabs = ({ pathname, tabs }) => (
 
 Tabs.getInitialProps = async function(context) {
   return { pathname: context.pathname };
-};
-
-Tabs.propTypes = {
-  pathname: PropTypes.string.isRequired
 };
 
 const mapStateToProps = ({ videos }) => ({

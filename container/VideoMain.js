@@ -1,8 +1,26 @@
-import PropTypes from "prop-types";
+// @flow
+import React from "react";
 
+type Props = {
+  author: string,
+  width: number,
+  height: number,
+  title: string,
+  src: string,
+  description: string,
+  tab: string
+};
 // add a type of tab on thebackend either URL or PDF
 
-const VideoMain = ({ width, height, title, src, description, author, tab }) => {
+const VideoMain = ({
+  width,
+  height,
+  title,
+  src,
+  description,
+  author,
+  tab
+}: Props) => {
   return (
     <div className="container">
       <h1 className="title-container">{title}</h1>
@@ -47,16 +65,6 @@ const VideoMain = ({ width, height, title, src, description, author, tab }) => {
       `}</style>
     </div>
   );
-};
-
-VideoMain.propTypes = {
-  author: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  src: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  tab: PropTypes.string.isRequired
 };
 
 export default VideoMain;

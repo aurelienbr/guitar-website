@@ -1,5 +1,10 @@
-import PropTypes from "prop-types";
+// @flow
+import React from "react";
 import Button from "./components/Button";
+
+type Props = {
+  pathname: string
+};
 
 const BUTTONS = [
   {
@@ -19,7 +24,7 @@ const BUTTONS = [
   }
 ];
 
-class Header extends React.Component {
+class Header extends React.Component<Props> {
   render() {
     const { pathname } = this.props;
     return (
@@ -54,9 +59,5 @@ class Header extends React.Component {
     );
   }
 }
-
-Header.propTypes = {
-  pathname: PropTypes.string.isRequired
-};
 
 export default Header;

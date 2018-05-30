@@ -1,6 +1,13 @@
-import PropTypes from "prop-types";
+// @flow
+import React from "react";
 
-const Tab = ({ url, date, title }) => (
+type Props = {
+  url: string,
+  date: string,
+  title: string
+};
+
+const Tab = ({ url, date, title }: Props) => (
   <div className="container">
     <p>{title}</p>
     <p>{date}</p>
@@ -24,11 +31,5 @@ const Tab = ({ url, date, title }) => (
     `}</style>
   </div>
 );
-
-Tab.propTypes = {
-  url: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
-};
 
 export default Tab;

@@ -1,3 +1,5 @@
+// @flow
+import React from "react";
 import Link from "next/link";
 import Header from "../container/Header";
 import PropTypes from "prop-types";
@@ -6,7 +8,12 @@ import VideoMain from "../container/VideoMain";
 import Footer from "../container/components/Footer";
 import { videos } from "../api";
 
-const Video = ({ video, pathname }) => {
+type Props = {
+  pathname: string,
+  video: any
+};
+
+const Video = ({ pathname, video }: Props) => {
   return (
     <div>
       <Header pathname={pathname} />

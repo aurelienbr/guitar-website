@@ -1,12 +1,30 @@
+// @flow
+import React from "react";
 import axios from "axios";
 import verifForm from "../tools/verifForm";
 import Loader from "react-loader-spinner";
 
 const API_MAIL = "https://apiresume.herokuapp.com/mail";
 
-class Contact extends React.Component {
-  constructor(props) {
-    super(props);
+type Props = {};
+
+type State = {
+  name: string,
+  email: string,
+  textarea: string,
+  success: string,
+  loading: boolean,
+  error: {
+    name: string,
+    email: string,
+    textarea: string,
+    global: string
+  }
+};
+
+class Contact extends React.Component<Props, State> {
+  constructor() {
+    super();
     this.state = {
       name: "",
       email: "",
@@ -22,7 +40,7 @@ class Contact extends React.Component {
     };
   }
 
-  sendEmail = event => {
+  sendEmail = (event: SyntheticInputEvent<HTMLInputElement>) => {
     const { name, email, textarea } = this.state;
     event.preventDefault();
     this.setState({ loading: true });
@@ -65,17 +83,17 @@ class Contact extends React.Component {
       });
   };
 
-  handleName = e =>
+  handleName = (e: SyntheticInputEvent<HTMLInputElement>) =>
     this.setState({
       name: e.target.value,
       error: { ...this.state.error, name: "" }
     });
-  handleEmail = e =>
+  handleEmail = (e: SyntheticInputEvent<HTMLInputElement>) =>
     this.setState({
       email: e.target.value,
       error: { ...this.state.error, email: "" }
     });
-  handleTextArea = e =>
+  handleTextArea = (e: SyntheticInputEvent<HTMLInputElement>) =>
     this.setState({
       textarea: e.target.value,
       error: { ...this.state.error, textarea: "" }

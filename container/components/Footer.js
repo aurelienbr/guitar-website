@@ -1,3 +1,6 @@
+// @flow
+import React from "react";
+
 const DatasFooter = [
   {
     href: "https://my-resume-aurelien.herokuapp.com/",

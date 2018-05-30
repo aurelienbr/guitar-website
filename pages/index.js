@@ -1,22 +1,22 @@
+// @flow
+import React from "react";
 import Link from "next/link";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
 import { Provider } from "react-redux";
 
 import Head from "next/head";
 import Header from "../container/Header";
 import Video from "../container/components/Video";
 
-class Videos extends React.Component {
+type Props = {
+  pathname: string,
+  videos: Array<any>
+};
+
+class Videos extends React.Component<Props> {
   static getInitialProps({ pathname, store }) {
     return { pathname };
   }
-
-  static propTypes = {
-    videos: PropTypes.array.isRequired,
-    pathname: PropTypes.string.isRequired
-  };
 
   render() {
     const { videos, pathname } = this.props;

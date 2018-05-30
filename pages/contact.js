@@ -1,11 +1,15 @@
+// @flow
+import React from "react";
 import Link from "next/link";
-import Header from "../container/Header";
 import ContactComponent from "../container/Contact";
 import Footer from "../container/components/Footer";
+import Header from "../container/Header";
 
-import PropTypes from "prop-types";
+type Props = {
+  pathname: string
+};
 
-const Contact = props => (
+const Contact = (props: Props) => (
   <div>
     <Header pathname={props.pathname} />
     <ContactComponent />
@@ -25,10 +29,6 @@ const Contact = props => (
 
 Contact.getInitialProps = async function(context) {
   return { pathname: context.pathname };
-};
-
-Contact.propTypes = {
-  pathname: PropTypes.string.isRequired
 };
 
 export default Contact;
