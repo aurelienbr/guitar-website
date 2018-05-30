@@ -5,6 +5,7 @@ import thunkMiddleware from "redux-thunk";
 import { Provider } from "react-redux";
 import reducers from "../redux";
 import withRedux from "next-redux-wrapper";
+import { findVideos } from "../actions/videos";
 
 const makeStore = (initialState, option) => {
   return createStore(reducers, initialState, applyMiddleware(thunkMiddleware));
@@ -17,6 +18,7 @@ class MyApp extends App {
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
+    await ctx.store.dispatch(findVideos());
 
     return { pageProps };
   }
@@ -33,4 +35,12 @@ class MyApp extends App {
   }
 }
 
-export default withRedux(makeStore)(MyApp);
+const mapDispatchToProps = dispatch => {
+  return {
+    findVideos: () => {
+      dispatch(findVideos());
+    }
+  };
+};
+
+export default withRedux(makeStore, null, mapDispatchToProps)(MyApp);

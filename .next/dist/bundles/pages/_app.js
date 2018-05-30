@@ -72,6 +72,94 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./actions/videos.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return findVideos; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__("./api.js");
+
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
+
+var findVideos = function findVideos() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(dispatch) {
+        var _ref2, data;
+
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return __WEBPACK_IMPORTED_MODULE_1__api__["a" /* videos */].find();
+
+              case 3:
+                _ref2 = _context.sent;
+                data = _ref2.data;
+                dispatch({
+                  type: "REQUEST_FIND_VIDEO_SUCCESS",
+                  payload: data
+                });
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                return _context.abrupt("return", {
+                  type: "REQUEST_FIND_VIDEO_ERROR",
+                  payload: _context.t0
+                });
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 8]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  );
+};
+
+/***/ }),
+
+/***/ "./api.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return videos; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers__ = __webpack_require__("@feathersjs/feathers");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client__ = __webpack_require__("@feathersjs/rest-client");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("axios");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+
+
+
+var app = __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers___default()();
+var restClient = __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client___default()("http://localhost:3030");
+app.configure(restClient.axios(__WEBPACK_IMPORTED_MODULE_2_axios___default.a));
+var videos = app.service("videos");
+
+/* unused harmony default export */ var _unused_webpack_default_export = (app);
+
+/***/ }),
+
 /***/ "./pages/_app.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -92,6 +180,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__redux__ = __webpack_require__("./redux.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper__ = __webpack_require__("next-redux-wrapper");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_videos__ = __webpack_require__("./actions/videos.js");
 
 var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\_app.js";
 
@@ -112,6 +201,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -146,18 +236,18 @@ function (_App) {
       return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_app__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         }
       }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_redux__["Provider"], {
         store: store,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 30
         }
       }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 31
         }
       }))));
     }
@@ -187,11 +277,15 @@ function (_App) {
                 pageProps = _context.sent;
 
               case 6:
+                _context.next = 8;
+                return ctx.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_8__actions_videos__["a" /* findVideos */])());
+
+              case 8:
                 return _context.abrupt("return", {
                   pageProps: pageProps
                 });
 
-              case 7:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -208,7 +302,15 @@ function (_App) {
   return MyApp;
 }(__WEBPACK_IMPORTED_MODULE_1_next_app___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper___default()(makeStore)(MyApp));
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    findVideos: function findVideos() {
+      dispatch(Object(__WEBPACK_IMPORTED_MODULE_8__actions_videos__["a" /* findVideos */])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper___default()(makeStore, null, mapDispatchToProps)(MyApp));
 
 /***/ }),
 
@@ -237,6 +339,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var INITIAL_STATE = {
   videos: [],
+  tabs: [],
   err: {}
 }; // create a simple reducer
 
@@ -247,7 +350,14 @@ var videoStore = function videoStore() {
   switch (action.type) {
     case "REQUEST_FIND_VIDEO_SUCCESS":
       return _objectSpread({}, state, {
-        videos: action.payload
+        videos: action.payload,
+        tabs: action.payload.map(function (tab) {
+          return {
+            _id: tab._id,
+            author: tab.author,
+            url: tab.url
+          };
+        })
       });
 
     case "REQUEST_FIND_VIDEO_ERROR":
@@ -276,6 +386,27 @@ module.exports = __webpack_require__("./pages/_app.js");
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/regenerator");
+
+/***/ }),
+
+/***/ "@feathersjs/feathers":
+/***/ (function(module, exports) {
+
+module.exports = require("@feathersjs/feathers");
+
+/***/ }),
+
+/***/ "@feathersjs/rest-client":
+/***/ (function(module, exports) {
+
+module.exports = require("@feathersjs/rest-client");
+
+/***/ }),
+
+/***/ "axios":
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

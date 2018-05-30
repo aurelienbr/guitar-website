@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { findVideos } from "../actions/videos";
+
 import { Provider } from "react-redux";
 
 import Head from "next/head";
@@ -9,8 +9,7 @@ import Header from "../container/Header";
 import Video from "../container/components/Video";
 
 class Videos extends React.Component {
-  static async getInitialProps({ pathname, store }) {
-    await store.dispatch(findVideos());
+  static getInitialProps({ pathname, store }) {
     return { pathname };
   }
 
@@ -72,12 +71,4 @@ const mapStateToProps = ({ videos }) => ({
   videos: videos.videos
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    findVideos: () => {
-      dispatch(findVideos());
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Videos);
+export default connect(mapStateToProps)(Videos);

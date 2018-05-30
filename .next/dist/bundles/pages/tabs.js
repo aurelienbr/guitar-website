@@ -353,8 +353,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__("prop-types");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__container_Header__ = __webpack_require__("./container/Header.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__container_Tab__ = __webpack_require__("./container/Tab.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux__ = __webpack_require__("react-redux");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__container_Header__ = __webpack_require__("./container/Header.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__container_Tab__ = __webpack_require__("./container/Tab.js");
 
 var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\tabs.js";
 
@@ -366,57 +368,43 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var TabData = [{
-  url: "http://hjg.com.ar/ghibli/musica/mononoke/",
-  type: "url",
-  title: "Princesse mononoke",
-  date: "22/05/2018"
-}, {
-  url: "see_you_again.pdf",
-  type: "pdf",
-  title: "Nausicaa de la vallée du vent",
-  date: "19/05/2018"
-}, {
-  url: "http://hjg.com.ar/ghibli/musica/mononoke/",
-  type: "url",
-  title: "Le chateau dans le ciel",
-  date: "24/04/2018"
-}];
 
-var Tabs = function Tabs(props) {
+
+var Tabs = function Tabs(_ref) {
+  var pathname = _ref.pathname,
+      tabs = _ref.tabs;
   return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 9
     },
     className: "jsx-430843866"
-  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__container_Header__["a" /* default */], {
-    pathname: props.pathname,
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__container_Header__["a" /* default */], {
+    pathname: pathname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 10
     }
-  }), TabData.map(function (tab) {
-    return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__container_Tab__["a" /* default */], {
+  }), tabs.map(function (tab) {
+    return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__container_Tab__["a" /* default */], {
       url: tab.url,
-      type: tab.type,
-      title: tab.title,
-      date: tab.date,
+      title: tab.author,
+      date: "12/11/1996",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 12
       }
     });
   }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_styled_jsx_style___default.a, {
     styleId: "430843866",
-    css: "body{font-family:\"Lucida Sans Unicode\",\"Lucida Grande\",sans-serif;}a{-webkit-text-decoration:none;text-decoration:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFx0YWJzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVDTyxBQUcwRSxBQUcxQyxrREFDdkIsV0FIQSIsImZpbGUiOiJwYWdlc1xcdGFicy5qcyIsInNvdXJjZVJvb3QiOiJDOlxcUmVhY3RcXG5leHQtZ3VpdGFyLXdlYnNpdGUiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSBcInByb3AtdHlwZXNcIjtcclxuXHJcbmltcG9ydCBIZWFkZXIgZnJvbSBcIi4uL2NvbnRhaW5lci9IZWFkZXJcIjtcclxuaW1wb3J0IFRhYnNDb21wb25lbnQgZnJvbSBcIi4uL2NvbnRhaW5lci9UYWJcIjtcclxuXHJcbmNvbnN0IFRhYkRhdGEgPSBbXHJcbiAge1xyXG4gICAgdXJsOiBcImh0dHA6Ly9oamcuY29tLmFyL2doaWJsaS9tdXNpY2EvbW9ub25va2UvXCIsXHJcbiAgICB0eXBlOiBcInVybFwiLFxyXG4gICAgdGl0bGU6IFwiUHJpbmNlc3NlIG1vbm9ub2tlXCIsXHJcbiAgICBkYXRlOiBcIjIyLzA1LzIwMThcIlxyXG4gIH0sXHJcbiAge1xyXG4gICAgdXJsOiBcInNlZV95b3VfYWdhaW4ucGRmXCIsXHJcbiAgICB0eXBlOiBcInBkZlwiLFxyXG4gICAgdGl0bGU6IFwiTmF1c2ljYWEgZGUgbGEgdmFsbMOpZSBkdSB2ZW50XCIsXHJcbiAgICBkYXRlOiBcIjE5LzA1LzIwMThcIlxyXG4gIH0sXHJcbiAge1xyXG4gICAgdXJsOiBcImh0dHA6Ly9oamcuY29tLmFyL2doaWJsaS9tdXNpY2EvbW9ub25va2UvXCIsXHJcbiAgICB0eXBlOiBcInVybFwiLFxyXG4gICAgdGl0bGU6IFwiTGUgY2hhdGVhdSBkYW5zIGxlIGNpZWxcIixcclxuICAgIGRhdGU6IFwiMjQvMDQvMjAxOFwiXHJcbiAgfVxyXG5dO1xyXG5cclxuY29uc3QgVGFicyA9IHByb3BzID0+IChcclxuICA8ZGl2PlxyXG4gICAgPEhlYWRlciBwYXRobmFtZT17cHJvcHMucGF0aG5hbWV9IC8+XHJcbiAgICB7VGFiRGF0YS5tYXAodGFiID0+IChcclxuICAgICAgPFRhYnNDb21wb25lbnRcclxuICAgICAgICB1cmw9e3RhYi51cmx9XHJcbiAgICAgICAgdHlwZT17dGFiLnR5cGV9XHJcbiAgICAgICAgdGl0bGU9e3RhYi50aXRsZX1cclxuICAgICAgICBkYXRlPXt0YWIuZGF0ZX1cclxuICAgICAgLz5cclxuICAgICkpfVxyXG4gICAgPHN0eWxlIGpzeCBnbG9iYWw+XHJcbiAgICAgIHtgXHJcbiAgICAgICAgYm9keSB7XHJcbiAgICAgICAgICBmb250LWZhbWlseTogXCJMdWNpZGEgU2FucyBVbmljb2RlXCIsIFwiTHVjaWRhIEdyYW5kZVwiLCBzYW5zLXNlcmlmO1xyXG4gICAgICAgIH1cclxuICAgICAgICBhIHtcclxuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgICAgICB9XHJcbiAgICAgIGB9XHJcbiAgICA8L3N0eWxlPlxyXG4gIDwvZGl2PlxyXG4pO1xyXG5cclxuVGFicy5nZXRJbml0aWFsUHJvcHMgPSBhc3luYyBmdW5jdGlvbihjb250ZXh0KSB7XHJcbiAgcmV0dXJuIHsgcGF0aG5hbWU6IGNvbnRleHQucGF0aG5hbWUgfTtcclxufTtcclxuXHJcblRhYnMucHJvcFR5cGVzID0ge1xyXG4gIHBhdGhuYW1lOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWRcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IFRhYnM7XHJcbiJdfQ== */\n/*@ sourceURL=pages\\tabs.js */"
+    css: "body{font-family:\"Lucida Sans Unicode\",\"Lucida Grande\",sans-serif;}a{-webkit-text-decoration:none;text-decoration:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFx0YWJzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWNPLEFBRzBFLEFBRzFDLGtEQUN2QixXQUhBIiwiZmlsZSI6InBhZ2VzXFx0YWJzLmpzIiwic291cmNlUm9vdCI6IkM6XFxSZWFjdFxcbmV4dC1ndWl0YXItd2Vic2l0ZSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcclxuaW1wb3J0IFByb3BUeXBlcyBmcm9tIFwicHJvcC10eXBlc1wiO1xyXG5pbXBvcnQgeyBjb25uZWN0IH0gZnJvbSBcInJlYWN0LXJlZHV4XCI7XHJcblxyXG5pbXBvcnQgSGVhZGVyIGZyb20gXCIuLi9jb250YWluZXIvSGVhZGVyXCI7XHJcbmltcG9ydCBUYWJzQ29tcG9uZW50IGZyb20gXCIuLi9jb250YWluZXIvVGFiXCI7XHJcblxyXG5jb25zdCBUYWJzID0gKHsgcGF0aG5hbWUsIHRhYnMgfSkgPT4gKFxyXG4gIDxkaXY+XHJcbiAgICA8SGVhZGVyIHBhdGhuYW1lPXtwYXRobmFtZX0gLz5cclxuICAgIHt0YWJzLm1hcCh0YWIgPT4gKFxyXG4gICAgICA8VGFic0NvbXBvbmVudCB1cmw9e3RhYi51cmx9IHRpdGxlPXt0YWIuYXV0aG9yfSBkYXRlPXtcIjEyLzExLzE5OTZcIn0gLz5cclxuICAgICkpfVxyXG4gICAgPHN0eWxlIGpzeCBnbG9iYWw+XHJcbiAgICAgIHtgXHJcbiAgICAgICAgYm9keSB7XHJcbiAgICAgICAgICBmb250LWZhbWlseTogXCJMdWNpZGEgU2FucyBVbmljb2RlXCIsIFwiTHVjaWRhIEdyYW5kZVwiLCBzYW5zLXNlcmlmO1xyXG4gICAgICAgIH1cclxuICAgICAgICBhIHtcclxuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgICAgICB9XHJcbiAgICAgIGB9XHJcbiAgICA8L3N0eWxlPlxyXG4gIDwvZGl2PlxyXG4pO1xyXG5cclxuVGFicy5nZXRJbml0aWFsUHJvcHMgPSBhc3luYyBmdW5jdGlvbihjb250ZXh0KSB7XHJcbiAgcmV0dXJuIHsgcGF0aG5hbWU6IGNvbnRleHQucGF0aG5hbWUgfTtcclxufTtcclxuXHJcblRhYnMucHJvcFR5cGVzID0ge1xyXG4gIHBhdGhuYW1lOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWRcclxufTtcclxuXHJcbmNvbnN0IG1hcFN0YXRlVG9Qcm9wcyA9ICh7IHZpZGVvcyB9KSA9PiAoe1xyXG4gIHRhYnM6IHZpZGVvcy50YWJzXHJcbn0pO1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgY29ubmVjdChtYXBTdGF0ZVRvUHJvcHMpKFRhYnMpO1xyXG4iXX0= */\n/*@ sourceURL=pages\\tabs.js */"
   }));
 };
 
 Tabs.getInitialProps =
 /*#__PURE__*/
 function () {
-  var _ref = _asyncToGenerator(
+  var _ref2 = _asyncToGenerator(
   /*#__PURE__*/
   __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(context) {
     return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
@@ -436,14 +424,22 @@ function () {
   }));
 
   return function (_x) {
-    return _ref.apply(this, arguments);
+    return _ref2.apply(this, arguments);
   };
 }();
 
 Tabs.propTypes = {
   pathname: __WEBPACK_IMPORTED_MODULE_4_prop_types___default.a.string.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Tabs);
+
+var mapStateToProps = function mapStateToProps(_ref3) {
+  var videos = _ref3.videos;
+  return {
+    tabs: videos.tabs
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_5_react_redux__["connect"])(mapStateToProps)(Tabs));
 
 /***/ }),
 
@@ -480,6 +476,13 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-redux":
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
 
 /***/ }),
 

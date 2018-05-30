@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   videos: [],
+  tabs: [],
   err: {}
 };
 
@@ -7,7 +8,15 @@ const INITIAL_STATE = {
 const videoStore = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "REQUEST_FIND_VIDEO_SUCCESS":
-      return { ...state, videos: action.payload };
+      return {
+        ...state,
+        videos: action.payload,
+        tabs: action.payload.map(tab => ({
+          _id: tab._id,
+          author: tab.author,
+          url: tab.url
+        }))
+      };
     case "REQUEST_FIND_VIDEO_ERROR":
       return { ...state, err: action.payload };
     default:
