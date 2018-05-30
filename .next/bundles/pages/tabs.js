@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/tabs', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([6],{
 
 /***/ "./container/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2474,7 +2474,7 @@ var _default = Tabs;
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/tabs.js");
@@ -2482,7 +2482,7 @@ module.exports = __webpack_require__("./pages/tabs.js");
 
 /***/ })
 
-},[3])
+},[5])
           return { page: comp.default }
         })
       ;

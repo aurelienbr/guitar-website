@@ -1,19 +1,30 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
-import Head from "next/head";
+import { connect } from "react-redux";
+import { findVideos } from "../actions/videos";
+import { Provider } from "react-redux";
 
+import Head from "next/head";
 import Header from "../container/Header";
 import Video from "../container/components/Video";
 
-import { videos } from "../api";
-
 class Videos extends React.Component {
+  static async getInitialProps({ pathname, store }) {
+    await store.dispatch(findVideos());
+    return { pathname };
+  }
+
+  static propTypes = {
+    videos: PropTypes.array.isRequired,
+    pathname: PropTypes.string.isRequired
+  };
+
   render() {
     const { videos, pathname } = this.props;
     return (
       <div>
         <Head>
-          <title>This page has a title 🤔</title>
+          <title>Aurélien guitar</title>
           <meta charSet="utf-8" />
           <meta
             name="viewport"
@@ -57,14 +68,16 @@ class Videos extends React.Component {
   }
 }
 
-Videos.getInitialProps = async function(context) {
-  const res = await videos.find();
-  return { videos: res.data, pathname: context.pathname };
+const mapStateToProps = ({ videos }) => ({
+  videos: videos.videos
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    findVideos: () => {
+      dispatch(findVideos());
+    }
+  };
 };
 
-Videos.propTypes = {
-  videos: PropTypes.array.isRequired,
-  pathname: PropTypes.string.isRequired
-};
-
-export default Videos;
+export default connect(mapStateToProps, mapDispatchToProps)(Videos);
