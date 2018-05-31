@@ -8,7 +8,8 @@ export type State = {
 
 export type REQUEST_FIND_VIDEO_SUCCESS_ACTION = {
   type: 'REQUEST_FIND_VIDEO_SUCCESS',
-  payload: Array<any>
+  videos: Array<any>,
+  tabs: Array<any>
 };
 
 export type REQUEST_FIND_VIDEO_ERROR_ACTION = {
@@ -31,12 +32,8 @@ export default (state: State = INITIAL_STATE, action: Action) => {
     case 'REQUEST_FIND_VIDEO_SUCCESS':
       return {
         ...state,
-        videos: action.payload,
-        tabs: action.payload.map(tab => ({
-          _id: tab._id,
-          author: tab.author,
-          url: tab.url
-        }))
+        videos: action.videos,
+        tabs: action.tabs
       };
     case 'REQUEST_FIND_VIDEO_ERROR':
       return { ...state, err: action.payload };
