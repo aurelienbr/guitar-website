@@ -8136,9 +8136,9 @@ var INITIAL_STATE = {
   videos: [],
   tabs: [],
   err: {}
-}; // create a simple reducer
+};
 
-var videoStore = function videoStore() {
+var _default = function _default() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
@@ -8165,7 +8165,6 @@ var videoStore = function videoStore() {
   }
 };
 
-var _default = videoStore;
 /* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
 
@@ -8179,7 +8178,6 @@ var _default = videoStore;
   }
 
   reactHotLoader.register(INITIAL_STATE, "INITIAL_STATE", "C:\\React\\next-guitar-website\\redux\\videoStore.js");
-  reactHotLoader.register(videoStore, "videoStore", "C:\\React\\next-guitar-website\\redux\\videoStore.js");
   reactHotLoader.register(_default, "default", "C:\\React\\next-guitar-website\\redux\\videoStore.js");
   leaveModule(module);
 })();

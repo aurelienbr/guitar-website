@@ -341,9 +341,8 @@ var INITIAL_STATE = {
   videos: [],
   tabs: [],
   err: {}
-}; // create a simple reducer
-
-var videoStore = function videoStore() {
+};
+/* harmony default export */ __webpack_exports__["a"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
@@ -368,9 +367,7 @@ var videoStore = function videoStore() {
     default:
       return state;
   }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (videoStore);
+});
 
 /***/ }),
 

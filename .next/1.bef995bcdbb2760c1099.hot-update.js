@@ -113,7 +113,7 @@ function createConnect() {
   };
 }
 
-/* unused harmony default export */ var _unused_webpack_default_export = (createConnect());
+/* harmony default export */ __webpack_exports__["a"] = (createConnect());
 
 /***/ }),
 
@@ -127,7 +127,7 @@ function createConnect() {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
 /* unused harmony reexport createProvider */
 /* unused harmony reexport connectAdvanced */
-/* unused harmony reexport connect */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
 
 
 
@@ -341,4 +341,4 @@ var _default = __WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper___default()(makeSt
 /***/ })
 
 })
-//# sourceMappingURL=1.f43586b9c3968c407dbe.hot-update.js.map
+//# sourceMappingURL=1.bef995bcdbb2760c1099.hot-update.js.map
