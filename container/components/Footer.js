@@ -1,21 +1,21 @@
 // @flow
-import React from "react";
+import React from 'react';
 
 const DatasFooter = [
   {
-    href: "https://my-resume-aurelien.herokuapp.com/",
-    src: "/static/images/resume.png",
-    alt: "online cv"
+    href: 'https://my-resume-aurelien.herokuapp.com/',
+    src: '/static/images/resume.png',
+    alt: 'online cv'
   },
   {
-    href: "https://www.linkedin.com/in/aur%C3%A9lien-brachet-146556141/",
-    src: "/static/images/linkedin-logo.png",
-    alt: "linkedin"
+    href: 'https://www.linkedin.com/in/aur%C3%A9lien-brachet-146556141/',
+    src: '/static/images/linkedin-logo.png',
+    alt: 'linkedin'
   },
   {
-    href: "https://www.instagram.com/orel_bip/",
-    src: "/static/images/instagram-logo.png",
-    alt: "instagram"
+    href: 'https://www.instagram.com/orel_bip/',
+    src: '/static/images/instagram-logo.png',
+    alt: 'instagram'
   }
 ];
 

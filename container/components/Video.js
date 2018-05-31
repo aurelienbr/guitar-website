@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 type Props = {
   author: string,

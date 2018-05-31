@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import Button from "./components/Button";
+import React from 'react';
+import Button from './components/Button';
 
 type Props = {
   pathname: string
@@ -9,18 +9,18 @@ type Props = {
 const BUTTONS = [
   {
     id: 1,
-    text: "Home",
-    href: "/"
+    text: 'Home',
+    href: '/'
   },
   {
     id: 2,
-    text: "Tabs",
-    href: "/tabs"
+    text: 'Tabs',
+    href: '/tabs'
   },
   {
     id: 3,
-    text: "Contact",
-    href: "/contact"
+    text: 'Contact',
+    href: '/contact'
   }
 ];
 

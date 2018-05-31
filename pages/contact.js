@@ -1,9 +1,9 @@
 // @flow
-import React from "react";
-import Link from "next/link";
-import ContactComponent from "../container/Contact";
-import Footer from "../container/components/Footer";
-import Header from "../container/Header";
+import React from 'react';
+import Link from 'next/link';
+import ContactComponent from '../container/Contact';
+import Footer from '../container/components/Footer';
+import Header from '../container/Header';
 
 type Props = {
   pathname: string
@@ -17,7 +17,7 @@ const Contact = (props: Props) => (
     <style jsx global>
       {`
         body {
-          font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+          font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
         }
         a {
           text-decoration: none;

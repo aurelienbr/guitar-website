@@ -1,12 +1,12 @@
 // @flow
-import React from "react";
-import Link from "next/link";
-import Header from "../container/Header";
-import PropTypes from "prop-types";
+import React from 'react';
+import Link from 'next/link';
+import Header from '../container/Header';
+import PropTypes from 'prop-types';
 
-import VideoMain from "../container/VideoMain";
-import Footer from "../container/components/Footer";
-import { videos } from "../api";
+import VideoMain from '../container/VideoMain';
+import Footer from '../container/components/Footer';
+import { videos } from '../api';
 
 type Props = {
   pathname: string,
@@ -31,7 +31,7 @@ const Video = ({ pathname, video }: Props) => {
       <style jsx global>
         {`
           body {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
           }
           a {
             text-decoration: none;

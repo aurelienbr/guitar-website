@@ -1,11 +1,11 @@
-import App, { Container } from "next/app";
-import React from "react";
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import thunkMiddleware from "redux-thunk";
-import { Provider } from "react-redux";
-import reducers from "../redux";
-import withRedux from "next-redux-wrapper";
-import { findVideos } from "../actions/videos";
+import App, { Container } from 'next/app';
+import React from 'react';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { Provider } from 'react-redux';
+import reducers from '../redux';
+import withRedux from 'next-redux-wrapper';
+import { findVideos } from '../actions/videos';
 
 const makeStore = (initialState, option) => {
   return createStore(reducers, initialState, applyMiddleware(thunkMiddleware));

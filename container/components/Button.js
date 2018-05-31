@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 type Props = {
   children: string,
@@ -12,7 +12,7 @@ const Button = ({ children, href, selected }: Props) => (
   <div className="container">
     <Link href={href}>
       <a>
-        <p className={selected ? "selected-button" : "button"}>{children}</p>
+        <p className={selected ? 'selected-button' : 'button'}>{children}</p>
       </a>
     </Link>
     <style jsx>

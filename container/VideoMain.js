@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React from 'react';
 
 type Props = {
   author: string,
@@ -35,7 +35,7 @@ const VideoMain = ({
         <p>
           Download the tab:
           <a href={tab} target="_blank">
-            {" " + tab}
+            {' ' + tab}
           </a>
         </p>
       </div>

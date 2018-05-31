@@ -7,12 +7,12 @@ export type State = {
 };
 
 export type REQUEST_FIND_VIDEO_SUCCESS_ACTION = {
-  type: "REQUEST_FIND_VIDEO_SUCCESS",
+  type: 'REQUEST_FIND_VIDEO_SUCCESS',
   payload: Array<any>
 };
 
 export type REQUEST_FIND_VIDEO_ERROR_ACTION = {
-  type: "REQUEST_FIND_VIDEO_ERROR",
+  type: 'REQUEST_FIND_VIDEO_ERROR',
   payload: Array<any>
 };
 
@@ -28,7 +28,7 @@ const INITIAL_STATE = {
 
 export default (state: State = INITIAL_STATE, action: Action) => {
   switch (action.type) {
-    case "REQUEST_FIND_VIDEO_SUCCESS":
+    case 'REQUEST_FIND_VIDEO_SUCCESS':
       return {
         ...state,
         videos: action.payload,
@@ -38,7 +38,7 @@ export default (state: State = INITIAL_STATE, action: Action) => {
           url: tab.url
         }))
       };
-    case "REQUEST_FIND_VIDEO_ERROR":
+    case 'REQUEST_FIND_VIDEO_ERROR':
       return { ...state, err: action.payload };
     default:
       return state;

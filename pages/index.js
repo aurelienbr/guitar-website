@@ -1,12 +1,12 @@
 // @flow
-import React from "react";
-import Link from "next/link";
-import { connect } from "react-redux";
-import { Provider } from "react-redux";
+import React from 'react';
+import Link from 'next/link';
+import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
 
-import Head from "next/head";
-import Header from "../container/Header";
-import Video from "../container/components/Video";
+import Head from 'next/head';
+import Header from '../container/Header';
+import Video from '../container/components/Video';
 
 type Props = {
   pathname: string,
@@ -49,7 +49,7 @@ class Videos extends React.Component<Props> {
         <style jsx global>
           {`
             body {
-              font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+              font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
             }
             a {
               text-decoration: none;

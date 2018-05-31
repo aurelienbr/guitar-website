@@ -1,7 +1,7 @@
 import type {
   State as videoState,
   Action as videoAction
-} from "./redux/videoStore";
+} from './redux/videoStore';
 
 export type State = {
   videos: videoState

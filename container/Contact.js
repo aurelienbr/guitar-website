@@ -1,10 +1,10 @@
 // @flow
-import React from "react";
-import axios from "axios";
-import verifForm from "../tools/verifForm";
-import Loader from "react-loader-spinner";
+import React from 'react';
+import axios from 'axios';
+import verifForm from '../tools/verifForm';
+import Loader from 'react-loader-spinner';
 
-const API_MAIL = "https://apiresume.herokuapp.com/mail";
+const API_MAIL = 'https://apiresume.herokuapp.com/mail';
 
 type Props = {};
 
@@ -26,16 +26,16 @@ class Contact extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: "",
-      textarea: "",
-      success: "",
+      name: '',
+      email: '',
+      textarea: '',
+      success: '',
       loading: false,
       error: {
-        name: "",
-        email: "",
-        textarea: "",
-        global: ""
+        name: '',
+        email: '',
+        textarea: '',
+        global: ''
       }
     };
   }
@@ -55,27 +55,27 @@ class Contact extends React.Component<Props, State> {
     axios
       .post(API_MAIL, {
         email: email,
-        subject: "Email from guitar-website",
+        subject: 'Email from guitar-website',
         text: `${name} wants to tell you that... ${textarea}`,
         headers: {
-          "Content-type": "application/x-www-form-urlencoded"
+          'Content-type': 'application/x-www-form-urlencoded'
         }
       })
       .then(response => {
         this.setState({
           loading: false,
-          success: "Your e-mail has been successfully sent",
-          error: { name: "", email: "", textarea: "", global: "" }
+          success: 'Your e-mail has been successfully sent',
+          error: { name: '', email: '', textarea: '', global: '' }
         });
         setTimeout(() => {
-          this.setState({ success: "", success: "" });
+          this.setState({ success: '', success: '' });
         });
       })
       .catch(err => {
         const global =
-          err.message === "Network Error"
-            ? "Your message could not be sent please check your internet connection"
-            : "Error while sending your message";
+          err.message === 'Network Error'
+            ? 'Your message could not be sent please check your internet connection'
+            : 'Error while sending your message';
         this.setState({
           error: { ...this.state.error, global },
           loading: false
@@ -86,17 +86,17 @@ class Contact extends React.Component<Props, State> {
   handleName = (e: SyntheticInputEvent<HTMLInputElement>) =>
     this.setState({
       name: e.target.value,
-      error: { ...this.state.error, name: "" }
+      error: { ...this.state.error, name: '' }
     });
   handleEmail = (e: SyntheticInputEvent<HTMLInputElement>) =>
     this.setState({
       email: e.target.value,
-      error: { ...this.state.error, email: "" }
+      error: { ...this.state.error, email: '' }
     });
   handleTextArea = (e: SyntheticInputEvent<HTMLInputElement>) =>
     this.setState({
       textarea: e.target.value,
-      error: { ...this.state.error, textarea: "" }
+      error: { ...this.state.error, textarea: '' }
     });
   render() {
     const { name, email, textarea, loading, error, success } = this.state;
@@ -152,7 +152,7 @@ class Contact extends React.Component<Props, State> {
           @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
           html {
-            font-family: "Montserrat", Arial, sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
           }
@@ -225,8 +225,8 @@ class Contact extends React.Component<Props, State> {
             width: 45%;
           }
 
-          input[type="text"],
-          [type="email"],
+          input[type='text'],
+          [type='email'],
           select,
           textarea {
             background: none;
@@ -252,8 +252,8 @@ class Contact extends React.Component<Props, State> {
             transition: all 0.3s;
           }
 
-          input[type="text"]:focus,
-          [type="email"]:focus,
+          input[type='text']:focus,
+          [type='email']:focus,
           textarea:focus {
             outline: none;
             padding: 0 0 0.875em 0;
@@ -290,7 +290,7 @@ class Contact extends React.Component<Props, State> {
             color: #474544;
             cursor: pointer;
             display: inline-block;
-            font-family: "Helvetica", Arial, sans-serif;
+            font-family: 'Helvetica', Arial, sans-serif;
             font-size: 0.875em;
             font-weight: bold;
             display: flex;
@@ -342,8 +342,8 @@ class Contact extends React.Component<Props, State> {
               width: 53px;
             }
 
-            input[type="text"],
-            [type="email"],
+            input[type='text'],
+            [type='email'],
             select,
             textarea {
               font-size: 0.875em;
