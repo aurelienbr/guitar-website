@@ -5,12 +5,16 @@ import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 
 import Head from 'next/head';
-import Header from '../container/Header';
-import Video from '../container/components/Video';
+import Header from '../src/containers/Header';
+import Video from '../src/containers/components/Video';
 
 type Props = {
   pathname: string,
-  videos: Array<any>
+  videos: Array<any>,
+  err: {
+    message: string,
+    status: string
+  }
 };
 
 class Videos extends React.Component<Props> {
@@ -19,7 +23,14 @@ class Videos extends React.Component<Props> {
   }
 
   render() {
-    const { videos, pathname } = this.props;
+    const { videos, pathname, err } = this.props;
+    if (err.message !== '' && err.status !== '') {
+      return (
+        <div>
+          Error status: {err.status} {err.message}
+        </div>
+      );
+    }
     return (
       <div>
         <Head>
@@ -68,7 +79,8 @@ class Videos extends React.Component<Props> {
 }
 
 const mapStateToProps = ({ videos }) => ({
-  videos: videos.videos
+  videos: videos.videos,
+  err: videos.err
 });
 
 export default connect(mapStateToProps)(Videos);

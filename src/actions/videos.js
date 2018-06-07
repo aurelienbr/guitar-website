@@ -1,10 +1,6 @@
 // @flow
-import type {
-  REQUEST_FIND_VIDEO_SUCCESS_ACTION,
-  REQUEST_FIND_VIDEO_ERROR_ACTION
-} from '../redux';
-import type { Dispatch, ThunkAction } from '../type';
-import { videos } from '../api';
+import type { Dispatch, ThunkAction } from '../redux/type';
+import { videos } from '../../api';
 
 export const findVideos = (): ThunkAction => {
   return async (dispatch: Dispatch) => {
@@ -21,10 +17,10 @@ export const findVideos = (): ThunkAction => {
         tabs
       });
     } catch (err) {
-      return {
+      dispatch({
         type: 'REQUEST_FIND_VIDEO_ERROR',
-        payload: err
-      };
+        payload: { status: err.code, message: err.className }
+      });
     }
   };
 };

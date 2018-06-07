@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import videoStore from './redux/videoStore';
+import videoStore from './src/redux/videoStore';
 
 export default combineReducers({
   videos: videoStore

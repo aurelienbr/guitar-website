@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import Link from 'next/link';
-import ContactComponent from '../container/Contact';
-import Footer from '../container/components/Footer';
-import Header from '../container/Header';
+import ContactComponent from '../src/containers/Contact';
+import Footer from '../src/containers/components/Footer';
+import Header from '../src/containers/Header';
 
 type Props = {
   pathname: string

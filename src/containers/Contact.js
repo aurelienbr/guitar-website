@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import axios from 'axios';
-import verifForm from '../tools/verifForm';
+import verifForm from '../../tools/verifForm';
 import Loader from 'react-loader-spinner';
 
 const API_MAIL = 'https://apiresume.herokuapp.com/mail';

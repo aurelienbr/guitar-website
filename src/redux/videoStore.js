@@ -3,7 +3,10 @@
 export type State = {
   videos: Array<any>,
   tabs: Array<any>,
-  err: any
+  err: {
+    message: string,
+    status: string
+  }
 };
 
 export type REQUEST_FIND_VIDEO_SUCCESS_ACTION = {
@@ -14,7 +17,10 @@ export type REQUEST_FIND_VIDEO_SUCCESS_ACTION = {
 
 export type REQUEST_FIND_VIDEO_ERROR_ACTION = {
   type: 'REQUEST_FIND_VIDEO_ERROR',
-  payload: Array<any>
+  payload: {
+    message: string,
+    status: string
+  }
 };
 
 export type Action =
@@ -24,7 +30,10 @@ export type Action =
 const INITIAL_STATE = {
   videos: [],
   tabs: [],
-  err: {}
+  err: {
+    message: '',
+    status: ''
+  }
 };
 
 export default (state: State = INITIAL_STATE, action: Action) => {

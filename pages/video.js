@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
 import Link from 'next/link';
-import Header from '../container/Header';
+import Header from '../src/containers/Header';
 import PropTypes from 'prop-types';
 
-import VideoMain from '../container/VideoMain';
-import Footer from '../container/components/Footer';
+import VideoMain from '../src/containers/VideoMain';
+import Footer from '../src/containers/components/Footer';
 import { videos } from '../api';
 
 type Props = {

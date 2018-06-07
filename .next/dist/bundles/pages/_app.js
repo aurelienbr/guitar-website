@@ -72,71 +72,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./actions/videos.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return findVideos; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__("./api.js");
-
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
-
-
-var findVideos = function findVideos() {
-  return (
-    /*#__PURE__*/
-    function () {
-      var _ref = _asyncToGenerator(
-      /*#__PURE__*/
-      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(dispatch) {
-        var _ref2, data;
-
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return __WEBPACK_IMPORTED_MODULE_1__api__["a" /* videos */].find();
-
-              case 3:
-                _ref2 = _context.sent;
-                data = _ref2.data;
-                dispatch({
-                  type: "REQUEST_FIND_VIDEO_SUCCESS",
-                  payload: data
-                });
-                _context.next = 11;
-                break;
-
-              case 8:
-                _context.prev = 8;
-                _context.t0 = _context["catch"](0);
-                return _context.abrupt("return", {
-                  type: "REQUEST_FIND_VIDEO_ERROR",
-                  payload: _context.t0
-                });
-
-              case 11:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this, [[0, 8]]);
-      }));
-
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    }()
-  );
-};
-
-/***/ }),
-
 /***/ "./api.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -152,9 +87,9 @@ var findVideos = function findVideos() {
 
 
 var app = __WEBPACK_IMPORTED_MODULE_0__feathersjs_feathers___default()();
-var restClient = __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client___default()("http://localhost:3030");
+var restClient = __WEBPACK_IMPORTED_MODULE_1__feathersjs_rest_client___default()('http://localhost:3030');
 app.configure(restClient.axios(__WEBPACK_IMPORTED_MODULE_2_axios___default.a));
-var videos = app.service("videos");
+var videos = app.service('videos');
 
 /* unused harmony default export */ var _unused_webpack_default_export = (app);
 
@@ -180,7 +115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__redux__ = __webpack_require__("./redux.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper__ = __webpack_require__("next-redux-wrapper");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_next_redux_wrapper__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_videos__ = __webpack_require__("./actions/videos.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_actions_videos__ = __webpack_require__("./src/actions/videos.js");
 
 var _jsxFileName = "C:\\React\\next-guitar-website\\pages\\_app.js";
 
@@ -278,7 +213,7 @@ function (_App) {
 
               case 6:
                 _context.next = 8;
-                return ctx.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_8__actions_videos__["a" /* findVideos */])());
+                return ctx.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_8__src_actions_videos__["a" /* findVideos */])());
 
               case 8:
                 return _context.abrupt("return", {
@@ -305,7 +240,7 @@ function (_App) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     findVideos: function findVideos() {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_8__actions_videos__["a" /* findVideos */])());
+      dispatch(Object(__WEBPACK_IMPORTED_MODULE_8__src_actions_videos__["a" /* findVideos */])());
     }
   };
 };
@@ -320,16 +255,92 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__redux_videoStore__ = __webpack_require__("./redux/videoStore.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_redux_videoStore__ = __webpack_require__("./src/redux/videoStore.js");
 
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
-  videos: __WEBPACK_IMPORTED_MODULE_1__redux_videoStore__["a" /* default */]
+  videos: __WEBPACK_IMPORTED_MODULE_1__src_redux_videoStore__["a" /* default */]
 }));
 
 /***/ }),
 
-/***/ "./redux/videoStore.js":
+/***/ "./src/actions/videos.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return findVideos; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__("./api.js");
+
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
+
+var findVideos = function findVideos() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(dispatch) {
+        var _ref2, data, tabs;
+
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return __WEBPACK_IMPORTED_MODULE_1__api__["a" /* videos */].find();
+
+              case 3:
+                _ref2 = _context.sent;
+                data = _ref2.data;
+                tabs = data.map(function (tab) {
+                  return {
+                    _id: tab._id,
+                    author: tab.author,
+                    url: tab.url
+                  };
+                });
+                dispatch({
+                  type: 'REQUEST_FIND_VIDEO_SUCCESS',
+                  videos: data,
+                  tabs: tabs
+                });
+                _context.next = 12;
+                break;
+
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context["catch"](0);
+                dispatch({
+                  type: 'REQUEST_FIND_VIDEO_ERROR',
+                  payload: {
+                    status: _context.t0.code,
+                    message: _context.t0.className
+                  }
+                });
+
+              case 12:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 9]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  );
+};
+
+/***/ }),
+
+/***/ "./src/redux/videoStore.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -340,26 +351,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   videos: [],
   tabs: [],
-  err: {}
+  err: {
+    message: '',
+    status: ''
+  }
 };
 /* harmony default export */ __webpack_exports__["a"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case "REQUEST_FIND_VIDEO_SUCCESS":
+    case 'REQUEST_FIND_VIDEO_SUCCESS':
       return _objectSpread({}, state, {
-        videos: action.payload,
-        tabs: action.payload.map(function (tab) {
-          return {
-            _id: tab._id,
-            author: tab.author,
-            url: tab.url
-          };
-        })
+        videos: action.videos,
+        tabs: action.tabs
       });
 
-    case "REQUEST_FIND_VIDEO_ERROR":
+    case 'REQUEST_FIND_VIDEO_ERROR':
       return _objectSpread({}, state, {
         err: action.payload
       });
